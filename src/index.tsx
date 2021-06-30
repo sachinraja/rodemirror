@@ -1,23 +1,22 @@
-import { forwardRef, useRef, useEffect } from 'react'
+import * as React from 'react'
 import { EditorState } from '@codemirror/state'
 import { EditorView } from '@codemirror/view'
 import { useMergeRefs } from './merge-refs'
-import type { ComponentProps } from 'react'
 import type { Extension } from '@codemirror/state'
 import type { ViewUpdate } from '@codemirror/view'
 
 export type CodeMirrorProps = {
   value?: string
   onUpdate?: (update: ViewUpdate) => void
-  extensions: Extension[]
-} & ComponentProps<'div'>
+  extensions?: Extension[]
+} & React.ComponentProps<'div'>
 
-const CodeMirror = forwardRef<HTMLDivElement, CodeMirrorProps>(
-  ({ value, onUpdate, extensions: passedExtensions, ...props }, ref) => {
-    const innerRef = useRef<HTMLDivElement>(null)
+const CodeMirror = React.forwardRef<HTMLDivElement, CodeMirrorProps>(
+  ({ value, onUpdate, extensions: passedExtensions = [], ...props }, ref) => {
+    const innerRef = React.useRef<HTMLDivElement>(null)
     const mergedRef = useMergeRefs(ref, innerRef)
 
-    useEffect(() => {
+    React.useEffect(() => {
       const currentEditor = innerRef.current
       if (!currentEditor) return
 
