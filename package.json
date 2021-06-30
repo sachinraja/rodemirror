@@ -1,0 +1,48 @@
+{
+  "name": "rodemirror",
+  "version": "1.0.0",
+  "description": "React component for codemirror.next",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "babel src -d dist --extensions .ts,.tsx && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sachinraja/rodemirror.git"
+  },
+  "keywords": [
+    "react",
+    "codemirror",
+    "codemirror.next",
+    "code",
+    "editor"
+  ],
+  "author": "Sachin Raja <sachinraja2349@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sachinraja/rodemirror/issues"
+  },
+  "homepage": "https://github.com/sachinraja/rodemirror#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
+    "@types/react": "^17.0.11",
+    "react": "^17.0.2",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.4"
+  },
+  "dependencies": {
+    "@codemirror/state": "^0.18.7",
+    "@codemirror/view": "^0.18.17"
+  },
+  "peerDependencies": {
+    "react": "^17"
+  }
+}
