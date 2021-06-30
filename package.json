@@ -1,12 +1,13 @@
 {
   "name": "rodemirror",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React component for codemirror.next",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "babel src -d dist --extensions .ts,.tsx && tsc"
+    "build": "babel src -d dist --extensions .ts,.tsx && tsc",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -33,14 +34,12 @@
     "@babel/preset-env": "^7.14.7",
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.14.5",
+    "@codemirror/state": "^0.18.7",
+    "@codemirror/view": "^0.18.17",
     "@types/react": "^17.0.11",
     "react": "^17.0.2",
     "rimraf": "^3.0.2",
     "typescript": "^4.3.4"
-  },
-  "dependencies": {
-    "@codemirror/state": "^0.18.7",
-    "@codemirror/view": "^0.18.17"
   },
   "peerDependencies": {
     "react": "^17"
