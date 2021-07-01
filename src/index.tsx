@@ -9,7 +9,7 @@ export type CodeMirrorProps = {
   value?: string
   onUpdate?: (update: ViewUpdate) => void
   extensions?: Extension[]
-  elementProps: React.ComponentProps<'div'>
+  elementProps?: React.ComponentProps<'div'>
 }
 
 const CodeMirror = React.forwardRef<HTMLDivElement, CodeMirrorProps>(
