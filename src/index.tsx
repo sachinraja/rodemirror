@@ -9,10 +9,11 @@ export type CodeMirrorProps = {
   value?: string
   onUpdate?: (update: ViewUpdate) => void
   extensions?: Extension[]
-} & React.ComponentProps<'div'>
+  elementProps: React.ComponentProps<'div'>
+}
 
 const CodeMirror = React.forwardRef<HTMLDivElement, CodeMirrorProps>(
-  ({ value, onUpdate, extensions: passedExtensions = [], ...props }, ref) => {
+  ({ value, onUpdate, extensions: passedExtensions = [], elementProps }, ref) => {
     const innerRef = React.useRef<HTMLDivElement>(null)
     const mergedRef = useMergeRefs(ref, innerRef)
 
@@ -35,9 +36,9 @@ const CodeMirror = React.forwardRef<HTMLDivElement, CodeMirrorProps>(
       })()
 
       return () => view.destroy()
-    }, [innerRef])
+    }, [innerRef, passedExtensions])
 
-    return <div ref={mergedRef} {...props} />
+    return <div ref={mergedRef} {...elementProps} />
   }
 )
 
