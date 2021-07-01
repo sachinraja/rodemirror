@@ -19,7 +19,9 @@ const CodeMirror = React.forwardRef<HTMLDivElement, CodeMirrorProps>(
   ) => {
     const innerRef = React.useRef<HTMLDivElement>(null)
     const mergedRef = useMergeRefs(ref, innerRef)
-    const [editorState, setEditorState] = React.useState<EditorState | null>(null)
+    const [editorState, setEditorState] = React.useState<EditorState | null>(
+      null
+    )
     const [editorView, setEditorView] = React.useState<EditorView | null>(null)
 
     React.useEffect(() => {
@@ -36,7 +38,7 @@ const CodeMirror = React.forwardRef<HTMLDivElement, CodeMirrorProps>(
           doc: value,
           extensions: [...extensions, ...passedExtensions],
         })
-        
+
         setEditorState(state)
 
         view = new EditorView({ state, parent: currentEditor })
@@ -49,15 +51,16 @@ const CodeMirror = React.forwardRef<HTMLDivElement, CodeMirrorProps>(
     React.useEffect(() => {
       if (!editorView) return
 
-      editorView.state.update({
+      const transaction = editorView.state.update({
         changes: {
           from: 0,
           to: editorView.state.doc.length,
           insert: value,
-        }
+        },
       })
-    }, [value])
 
+      editorView.dispatch(transaction)
+    }, [value])
 
     return <div ref={mergedRef} {...elementProps} />
   }
