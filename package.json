@@ -1,7 +1,7 @@
 {
   "name": "rodemirror",
   "version": "1.4.0",
-  "description": "React component for codemirror.next",
+  "description": "React component for CodeMirror 6",
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -32,6 +32,7 @@
     "react",
     "codemirror",
     "codemirror.next",
+    "6",
     "code",
     "editor"
   ],
