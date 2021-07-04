@@ -23,7 +23,7 @@ const Editor = () => {
 }
 ```
 
-The `useMemo` is so that the extensions are not recreated each time, which would cause a recreation of the state and view.
+The `useMemo` is so that the extensions are not recreated each time, which would cause a recreation of the state. You'll want to do the same with the `selection` prop.
 
 ### Controlled
 
@@ -31,10 +31,6 @@ Create a controlled component for reading values.
 
 ```tsx
 import { useMemo, useState } from 'react'
-import { basicSetup } from '@codemirror/basic-setup'
-import { oneDark } from '@codemirror/theme-one-dark'
-import { javascript } from '@codemirror/lang-javascript'
-import CodeMirror, { CodeMirrorProps } from 'rodemirror'
 import type { Extension } from '@codemirror/state'
 
 const Editor = () => {
@@ -61,3 +57,30 @@ const Editor = () => {
 ```
 
 WARNING: Do **not** pass in a controlled value to the `CodeMirror` value prop. This **will** update the entire document on each update and **will** break the editor. If you want to update the value from a state, you can separate the reading and writing values.
+
+### [EditorView](https://codemirror.net/6/docs/ref/#view.EditorView) and [EditorState](https://codemirror.net/6/docs/ref/#state.EditorState) (Complex Use Cases)
+
+Unless you are performing complex actions, you likely do not need this. You can use callbacks to keep `EditorView` and `EditorState`. You can keep the `EditorView` in a `useState` like so:
+
+```tsx
+import type { EditorView } from '@codemirror/view'
+
+const Editor = () => {
+  const extensions = useMemo(() => [basicSetup, oneDark, javascript()], [])
+
+  const [editorView, setEditorView] = useState<EditorView | null>(null)
+
+  return (
+    <CodeMirror
+      extensions={extensions}
+      onEditorViewChange={(editorView) => setEditorView(editorView)}
+    />
+  )
+}
+```
+
+The same applies to `EditorState`, though it can be accessed from `EditorView.state` anyway.
+
+## Examples
+
+See the [examples](https://github.com/sachinraja/rodemirror/tree/main/examples) for how the editor can be used.

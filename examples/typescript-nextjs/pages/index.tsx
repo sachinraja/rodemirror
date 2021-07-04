@@ -4,25 +4,72 @@ import { oneDark } from '@codemirror/theme-one-dark'
 import { javascript } from '@codemirror/lang-javascript'
 import CodeMirror from 'rodemirror'
 import type { Extension } from '@codemirror/state'
+import type { EditorView } from '@codemirror/view'
 
 export default function Home() {
-  const extensions = useMemo<Extension[]>(
-    () => [basicSetup, oneDark, javascript()],
+  const baseExtensions: Extension[] = [basicSetup, oneDark]
+
+  const [extensions, setExtensions] = useState(baseExtensions)
+
+  const selection = useMemo(
+    () => ({
+      anchor: 7,
+    }),
     []
   )
 
   const defaultValue = "console.log('Hello world!')"
   const [value, setValue] = useState(defaultValue)
 
+  const [editorView, setEditorView] = useState<EditorView | null>(null)
   return (
-    <CodeMirror
-      value={defaultValue}
-      onUpdate={(v) => {
-        if (v.docChanged) {
-          setValue(v.state.doc.toString())
-        }
-      }}
-      extensions={extensions}
-    />
+    <>
+      <CodeMirror
+        value={defaultValue}
+        onUpdate={(v) => {
+          if (v.docChanged) {
+            setValue(v.state.doc.toString())
+          }
+        }}
+        onEditorViewChange={(editorView) => setEditorView(editorView)}
+        selection={selection}
+        extensions={extensions}
+      />
+
+      <div style={{ marginTop: 5 }}>
+        <button
+          type="button"
+          onClick={() => {
+            if (!editorView) return
+
+            const { doc } = editorView.state
+
+            if (doc.length === 0) return
+
+            // remove last character
+            editorView.dispatch({
+              changes: {
+                from: doc.length - 1,
+                to: doc.length,
+                insert: '',
+              },
+            })
+          }}
+        >
+          Click me to remove a character
+        </button>
+
+        <button
+          type="button"
+          onClick={() => setExtensions([...baseExtensions, javascript()])}
+        >
+          Click me to add the JavaScript extension
+        </button>
+
+        <button type="button" onClick={() => setExtensions(baseExtensions)}>
+          Click me to remove the JavaScript extension
+        </button>
+      </div>
+    </>
   )
 }

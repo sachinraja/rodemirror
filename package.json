@@ -21,8 +21,8 @@
     "prebuild": "rimraf dist",
     "build": "rollup -c",
     "prepublishOnly": "npm run build",
-    "prettier-check": "prettier --check .",
-    "format": "prettier --write ."
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -63,7 +63,7 @@
     "@codemirror/view": "^0.18.17"
   },
   "peerDependencies": {
-    "react": "^17"
+    "react": "^16 || ^17"
   },
   "prettier": {
     "semi": false,
