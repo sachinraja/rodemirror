@@ -38,7 +38,7 @@ import CodeMirror, { CodeMirrorProps } from 'rodemirror'
 import type { Extension } from '@codemirror/state'
 
 const Editor = () => {
-  const extensions = useMemo<Extension>(
+  const extensions = useMemo<Extension[]>(
     () => [basicSetup, oneDark, javascript()],
     []
   )
@@ -46,15 +46,14 @@ const Editor = () => {
   const defaultValue = "console.log('Hello world!')"
   const [, setValue] = useState(defaultValue)
 
-  const onUpdate = useCallback<Exclude<CodeMirrorProps['onUpdate'], undefined>>(
-    (v) => setValue(v.state.doc.toString()),
-    []
-  )
-
   return (
     <CodeMirror
       value={defaultValue}
-      onUpdate={onUpdate}
+      onUpdate={(v) => {
+        if (v.docChanged) {
+          setValue(v.state.doc.toString())
+        }
+      }}
       extensions={extensions}
     />
   )
