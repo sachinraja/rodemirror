@@ -28,7 +28,7 @@ const CodeMirror = React.forwardRef<HTMLDivElement, CodeMirrorProps>(
       const currentEditor = innerRef.current
       if (!currentEditor) return
 
-      let view: EditorView
+      let view: EditorView | undefined
       ;(async () => {
         const extensions: Extension[] = []
 
@@ -45,8 +45,8 @@ const CodeMirror = React.forwardRef<HTMLDivElement, CodeMirrorProps>(
         setEditorView(view)
       })()
 
-      return () => view.destroy()
-    }, [innerRef, passedExtensions])
+      return () => view?.destroy()
+    }, [innerRef, passedExtensions, onUpdate])
 
     React.useEffect(() => {
       if (!editorView) return

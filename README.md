@@ -27,14 +27,40 @@ The `useMemo` is so that the extensions are not recreated each time, which would
 
 ### Controlled
 
-Create a controlled component.
+Create a controlled component for reading values.
 
 ```tsx
+import { useMemo, useState, useCallback } from 'react'
+import { basicSetup } from '@codemirror/basic-setup'
+import { oneDark } from '@codemirror/theme-one-dark'
+import { javascript } from '@codemirror/lang-javascript'
+import CodeMirror, { CodeMirrorProps } from 'rodemirror'
+import type { Extension } from '@codemirror/state'
+
 const Editor = () => {
-  const extensions = useMemo(() => [basicSetup, oneDark, javascript()], [])
+  const extensions = useMemo<Extension>(
+    () => [basicSetup, oneDark, javascript()],
+    []
+  )
 
-  const [value, setValue] = useState("console.log('Hello world!')")
+  const defaultValue = "console.log('Hello world!')"
+  const [, setValue] = useState(defaultValue)
 
-  return <CodeMirror value={value} onUpdate={(v) => setValue(v.state.doc.toString())} extensions={[basicSetup, oneDark, javascript()]} />
+  const onUpdate = useCallback<Exclude<CodeMirrorProps['onUpdate'], undefined>>(
+    (v) => setValue(v.state.doc.toString()),
+    []
+  )
+
+  return (
+    <CodeMirror
+      value={defaultValue}
+      onUpdate={onUpdate}
+      extensions={extensions}
+    />
+  )
 }
 ```
+
+The `useCallback` is for the same reason as the `useMemo`, but for the `onUpdate` function. It prevents a recreation of state and view on each render.
+
+WARNING: Do **not** pass in a controlled value to the `CodeMirror` value prop. This **will** update the entire document on each update and **will** break the editor. If you want to update the value from a state, you can separate the reading and writing values.
