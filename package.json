@@ -1,6 +1,6 @@
 {
   "name": "rodemirror",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "React component for CodeMirror 6",
   "type": "module",
   "main": "dist/index.cjs",
