@@ -47,6 +47,7 @@
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.14.5",
     "@types/react": "^17.0.11",
+    "prettier": "^2.3.2",
     "react": "^17.0.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.52.6",
@@ -61,5 +62,9 @@
   },
   "peerDependencies": {
     "react": "^17"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
   }
 }
