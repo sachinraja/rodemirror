@@ -12,7 +12,7 @@ export default function Home() {
   )
 
   const defaultValue = "console.log('Hello world!')"
-  const [, setValue] = useState(defaultValue)
+  const [value, setValue] = useState(defaultValue)
 
   return (
     <CodeMirror
