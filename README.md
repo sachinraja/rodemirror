@@ -30,7 +30,7 @@ The `useMemo` is so that the extensions are not recreated each time, which would
 Create a controlled component for reading values.
 
 ```tsx
-import { useMemo, useState, useCallback } from 'react'
+import { useMemo, useState } from 'react'
 import { basicSetup } from '@codemirror/basic-setup'
 import { oneDark } from '@codemirror/theme-one-dark'
 import { javascript } from '@codemirror/lang-javascript'
@@ -59,7 +59,5 @@ const Editor = () => {
   )
 }
 ```
-
-The `useCallback` is for the same reason as the `useMemo`, but for the `onUpdate` function. It prevents a recreation of state and view on each render.
 
 WARNING: Do **not** pass in a controlled value to the `CodeMirror` value prop. This **will** update the entire document on each update and **will** break the editor. If you want to update the value from a state, you can separate the reading and writing values.
