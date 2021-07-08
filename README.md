@@ -1,6 +1,6 @@
 # rodemirror
 
-React component for [CodeMirror 6](https://codemirror.net/6/).
+React component for [CodeMirror 6](https://codemirror.net/6/)
 
 ## Installation
 
