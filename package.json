@@ -1,6 +1,6 @@
 {
   "name": "rodemirror",
-  "version": "1.4.1",
+  "version": "0.0.0-development",
   "description": "React component for CodeMirror 6",
   "type": "module",
   "main": "dist/index.cjs",
@@ -22,11 +22,12 @@
     "build": "rollup -c",
     "prepublishOnly": "npm run build",
     "format:check": "prettier --check .",
-    "format:fix": "prettier --write ."
+    "format:fix": "prettier --write .",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sachinraja/rodemirror.git"
+    "url": "https://github.com/sachinraja/rodemirror.git"
   },
   "keywords": [
     "react",
@@ -56,7 +57,8 @@
     "rollup": "^2.52.6",
     "rollup-plugin-dts": "^3.0.2",
     "rollup-plugin-ts": "^1.4.0",
-    "typescript": "^4.3.4"
+    "typescript": "^4.3.4",
+    "semantic-release": "^17.4.4"
   },
   "dependencies": {
     "@babel/runtime": "^7.14.6",
@@ -65,6 +67,11 @@
   },
   "peerDependencies": {
     "react": "^16 || ^17"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
   },
   "prettier": {
     "semi": false,
