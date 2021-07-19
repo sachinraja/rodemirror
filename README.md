@@ -17,6 +17,7 @@ import CodeMirror from 'rodemirror'
 import { basicSetup } from '@codemirror/basic-setup'
 import { oneDark } from '@codemirror/theme-one-dark'
 import { javascript } from '@codemirror/javascript'
+import { useMemo } from 'react'
 
 const Editor = () => {
   const extensions = useMemo(() => [basicSetup, oneDark, javascript()], [])
@@ -32,7 +33,7 @@ The `useMemo` is so that the extensions are not recreated each time, which would
 Create a controlled component for reading values.
 
 ```tsx
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import type { Extension } from '@codemirror/state'
 
 const Editor = () => {
