@@ -14,9 +14,6 @@
     "dist"
   ],
   "sideEffects": false,
-  "workspaces": [
-    "examples/*"
-  ],
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "rollup -c",
@@ -44,6 +41,14 @@
     "url": "https://github.com/sachinraja/rodemirror/issues"
   },
   "homepage": "https://github.com/sachinraja/rodemirror#readme",
+  "dependencies": {
+    "@babel/runtime": "^7.14.8"
+  },
+  "peerDependencies": {
+    "@codemirror/state": "0.18.x",
+    "@codemirror/view": "0.18.x",
+    "react": "^16 || ^17"
+  },
   "devDependencies": {
     "@babel/cli": "7.14.8",
     "@babel/core": "7.14.8",
@@ -63,14 +68,6 @@
     "rollup-plugin-ts": "1.4.0",
     "semantic-release": "17.4.4",
     "typescript": "4.3.5"
-  },
-  "dependencies": {
-    "@babel/runtime": "^7.14.6"
-  },
-  "peerDependencies": {
-    "@codemirror/state": "0.18.x",
-    "@codemirror/view": "0.18.x",
-    "react": "^16 || ^17"
   },
   "release": {
     "branches": [
