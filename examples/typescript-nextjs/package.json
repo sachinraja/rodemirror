@@ -11,8 +11,8 @@
     "@codemirror/lang-javascript": "^0.18.0",
     "@codemirror/theme-one-dark": "^0.18.1",
     "next": "^11.0.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "rodemirror": "file:../.."
   },
   "devDependencies": {
