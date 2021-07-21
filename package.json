@@ -51,7 +51,6 @@
     "@babel/preset-env": "7.14.8",
     "@babel/preset-react": "7.14.5",
     "@babel/preset-typescript": "7.14.5",
-    "@semantic-release/release-notes-generator": "9.0.3",
     "@types/react": "^17.0.11",
     "husky": "^7.0.1",
     "prettier": "^2.3.2",
@@ -67,16 +66,19 @@
     "@babel/runtime": "^7.14.6"
   },
   "peerDependencies": {
-    "react": "^16 || ^17",
     "@codemirror/state": "0.18.x",
-    "@codemirror/view": "0.18.x"
+    "@codemirror/view": "0.18.x",
+    "react": "^16 || ^17"
   },
   "release": {
     "branches": [
       "main"
     ],
     "plugins": [
-      "@semantic-release/release-notes-generator"
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github"
     ]
   },
   "prettier": {
