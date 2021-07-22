@@ -16,7 +16,7 @@ Use the `CodeMirror` component:
 import CodeMirror from 'rodemirror'
 import { basicSetup } from '@codemirror/basic-setup'
 import { oneDark } from '@codemirror/theme-one-dark'
-import { javascript } from '@codemirror/javascript'
+import { javascript } from '@codemirror/lang-javascript'
 import { useMemo } from 'react'
 
 const Editor = () => {
