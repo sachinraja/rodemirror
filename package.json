@@ -58,7 +58,7 @@
     "@babel/preset-typescript": "7.14.5",
     "@codemirror/state": "0.18.7",
     "@codemirror/view": "0.18.19",
-    "@types/react": "17.0.14",
+    "@types/react": "17.0.15",
     "husky": "7.0.1",
     "prettier": "2.3.2",
     "react": "17.0.2",
