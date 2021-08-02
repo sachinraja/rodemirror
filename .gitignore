@@ -11,11 +11,18 @@ build/Release
 # Dependency directories
 node_modules/
 
-# Next.js build output
-.next
-
 # build output
 dist
 
 package-lock.json
 !/package-lock.json
+
+
+/.yarn/*
+!/.yarn/patches
+!/.yarn/plugins
+!/.yarn/releases
+!/.yarn/sdks
+
+# only if zero installs
+# !/.yarn/cache
