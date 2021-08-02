@@ -22,8 +22,8 @@
     "format:check": "prettier --check .",
     "format:fix": "prettier --write .",
     "semantic-release": "semantic-release",
-    "prepare": "husky install",
-    "prepack": "yarn build"
+    "prepack": "yarn build",
+    "postinstallDev": "husky install"
   },
   "repository": {
     "type": "git",
