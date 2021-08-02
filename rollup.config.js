@@ -1,15 +1,25 @@
-import ts from 'rollup-plugin-ts'
+import path from 'path'
+import typescript from '@rollup/plugin-typescript'
+import swc from 'rollup-plugin-swc'
+
+const distDir = 'dist'
 
 export default {
-  input: 'src/index.tsx',
+  input: path.join('src', 'index.tsx'),
   external: (id) => !/^(\.?\/|\w:)/.test(id),
   output: [
-    { file: 'dist/index.cjs', format: 'cjs' },
-    { dir: './dist', format: 'es' },
+    { file: path.join(distDir, 'index.cjs'), format: 'cjs' },
+    { file: path.join(distDir, 'index.js'), format: 'esm' },
   ],
   plugins: [
-    ts({
-      transpiler: 'babel',
+    typescript({ tsconfig: './tsconfig.json' }),
+    swc({
+      jsc: {
+        parser: {
+          syntax: 'typescript',
+          tsx: true,
+        },
+      },
     }),
   ],
 }
