@@ -1,4 +1,4 @@
-# Linting Example
+# linting
 
 Uses [`@codemirror/lint`](https://github.com/codemirror/lint) and `@codemirror/lang-javascript`'s `esLint` to provide diagnostics as the user types. It uses [`eslint4b`](https://github.com/mysticatea/eslint4b) to lint in the browser.
 
