@@ -11,15 +11,5 @@ export default {
     { file: path.join(distDir, 'index.cjs'), format: 'cjs' },
     { file: path.join(distDir, 'index.js'), format: 'esm' },
   ],
-  plugins: [
-    typescript({ tsconfig: './tsconfig.json' }),
-    swc({
-      jsc: {
-        parser: {
-          syntax: 'typescript',
-          tsx: true,
-        },
-      },
-    }),
-  ],
+  plugins: [typescript({ tsconfig: './tsconfig.json' }), swc()],
 }

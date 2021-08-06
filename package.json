@@ -19,6 +19,7 @@
     "clean": "rimraf dist",
     "build": "yarn clean && rollup -c",
     "type-check": "tsc --noEmit",
+    "test": "jest",
     "format:check": "prettier --check .",
     "format:fix": "prettier --write .",
     "semantic-release": "semantic-release",
@@ -43,9 +44,6 @@
     "url": "https://github.com/sachinraja/rodemirror/issues"
   },
   "homepage": "https://github.com/sachinraja/rodemirror#readme",
-  "dependencies": {
-    "@babel/runtime": "^7.14.8"
-  },
   "peerDependencies": {
     "@codemirror/state": "0.18.x",
     "@codemirror/view": "0.18.x",
@@ -54,13 +52,19 @@
   "devDependencies": {
     "@codemirror/state": "0.18.7",
     "@codemirror/view": "0.18.19",
-    "@rollup/plugin-typescript": "^8.2.5",
+    "@rollup/plugin-typescript": "8.2.5",
     "@swc/core": "1.2.70",
+    "@swc/jest": "0.1.4",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "12.0.0",
+    "@types/jest": "26.0.24",
     "@types/react": "17.0.15",
     "husky": "7.0.1",
+    "jest": "^27.0.6",
     "lint-staged": "11.1.1",
     "prettier": "2.3.2",
     "react": "17.0.2",
+    "react-dom": "17.0.2",
     "rimraf": "3.0.2",
     "rollup": "2.55.1",
     "rollup-plugin-swc": "0.2.0",
