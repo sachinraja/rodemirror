@@ -6,7 +6,9 @@ React component for [CodeMirror 6](https://codemirror.net/6/)
 
 ## Installation
 
-`npm i rodemirror @codemirror/state @codemirror/view`
+```bash
+npm i rodemirror @codemirror/state @codemirror/view
+```
 
 ## Usage
 
