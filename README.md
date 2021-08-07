@@ -30,9 +30,9 @@ const Editor = () => {
 
 The `useMemo` is so that the extensions are not recreated each time, which would cause a recreation of the state. You'll want to do the same with the `selection` prop.
 
-### Controlled
+### Uncontrolled
 
-Create a controlled component for reading values.
+Create an uncontrolled component for reading values.
 
 ```tsx
 import { useState } from 'react'
@@ -45,6 +45,7 @@ const Editor = () => {
   )
 
   const defaultValue = "console.log('Hello world!')"
+  // remove if you do not need the value
   const [value, setValue] = useState(defaultValue)
 
   return (
@@ -61,7 +62,27 @@ const Editor = () => {
 }
 ```
 
-WARNING: Do **not** pass in a controlled value to the `CodeMirror` value prop. This **will** update the entire document on each update and **will** break the editor. If you want to update the value from a state, you can separate the reading and writing values.
+### Controlled
+
+Create a controlled component for reading and writing values. Simply replace the `defaultValue` with the `value` in state (based off the uncontrolled example).
+
+```diff
+const defaultValue = "console.log('Hello world!')"
+const [value, setValue] = useState(defaultValue)
+
+return (
+  <CodeMirror
+-   value={defaultValue}
++   value={value}
+    onUpdate={(v) => {
+      if (v.docChanged) {
+        setValue(v.state.doc.toString())
+      }
+    }}
+    extensions={extensions}
+  />
+)
+```
 
 ### [EditorView](https://codemirror.net/6/docs/ref/#view.EditorView) and [EditorState](https://codemirror.net/6/docs/ref/#state.EditorState) (Complex Use Cases)
 
@@ -84,7 +105,7 @@ const Editor = () => {
 }
 ```
 
-The same applies to `EditorState`, though it can be accessed from `EditorView.state` anyway.
+The same applies to `EditorState`, though it can also be accessed from `EditorView.state`.
 
 ## Examples
 
