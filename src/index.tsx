@@ -71,6 +71,7 @@ const CodeMirror = React.forwardRef<HTMLDivElement, CodeMirrorProps>(
           to: editorView.state.doc.length,
           insert: value,
         },
+        selection: editorView.state.selection,
       })
 
       editorView.dispatch(transaction)

@@ -32,7 +32,7 @@ console.log(a)`
       onEditorViewChange={(changedEditorView) =>
         setEditorView(changedEditorView)
       }
-      onEditorStateChange={(editorState) => {
+      onEditorStateChange={() => {
         // to open the lint panel by default we must
         // grab a reference to the editorView and then
         // in onEditorStateChange, openLintPanel
