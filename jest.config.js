@@ -7,5 +7,5 @@ export default {
     rodemirror: '<rootDir>/src/index.tsx',
   },
   testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  setupFilesAfterEnv: ['@testing-library/jest-dom'],
 }
