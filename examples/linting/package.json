@@ -9,6 +9,7 @@
   "dependencies": {
     "@codemirror/basic-setup": "^0.18.2",
     "@codemirror/lang-javascript": "^0.18.0",
+    "@codemirror/lint": "^0.18.5",
     "@codemirror/state": "^0.18.7",
     "@codemirror/theme-one-dark": "^0.18.1",
     "@codemirror/view": "^0.18.19",
