@@ -13,7 +13,6 @@ console.log(a)`
 
   const extensions = useMemo(() => [basicSetup, oneDark, javascript()], [])
 
-  console.log(value)
   return (
     <>
       <CodeMirror
