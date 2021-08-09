@@ -1,10 +1,10 @@
 {
   extends: ['config:js-lib', 'schedule:weekly'],
-  automerge: true,
-  major: {
-    automerge: false,
-  },
   packageRules: [
+    {
+      matchUpdateTypes: ['minor', 'patch', 'pin', 'digest'],
+      automerge: true,
+    },
     {
       matchPackageNames: ['typescript'],
       automerge: false,
