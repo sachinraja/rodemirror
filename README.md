@@ -64,7 +64,7 @@ const Editor = () => {
 
 ### Controlled
 
-Create a controlled component for reading and writing values. Simply replace the `defaultValue` with the `value` in state (based off the uncontrolled example).
+Create a controlled component for reading and writing values. Simply replace the `defaultValue` with the `value` in state (based off the uncontrolled example). This is not recommended as you will be overwriting the entire document on each input. This also does not work with features such as autocomplete. If you must pass in a controlled value, you can separate the reading and writing values and only update when necessary.
 
 ```diff
 const defaultValue = "console.log('Hello world!')"

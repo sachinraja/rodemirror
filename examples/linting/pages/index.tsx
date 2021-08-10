@@ -29,19 +29,8 @@ console.log(a)`
     <CodeMirror
       value={value}
       extensions={extensions}
-      onEditorViewChange={(changedEditorView) =>
-        setEditorView(changedEditorView)
-      }
-      onEditorStateChange={() => {
-        // to open the lint panel by default we must
-        // grab a reference to the editorView and then
-        // in onEditorStateChange, openLintPanel
-        // we cannot call openLintPanel in onEditorViewChange
-        // because the lintState has not been created at that time
-        if (!editorView) return
-
-        openLintPanel(editorView)
-      }}
+      // open lint panel at start
+      onEditorViewChange={(editorView) => openLintPanel(editorView)}
     />
   )
 }

@@ -1,9 +1,10 @@
-import React from 'react'
-import { EditorState, EditorStateConfig } from '@codemirror/state'
+import { useMemo, useState, useEffect, forwardRef, useRef } from 'react'
+import { EditorState, EditorStateConfig, StateEffect } from '@codemirror/state'
 import { EditorView } from '@codemirror/view'
 import { useMergeRefs } from './merge-refs'
 import type { Extension } from '@codemirror/state'
 import type { ViewUpdate } from '@codemirror/view'
+import { useFirstRender } from './use-first-render'
 
 export type CodeMirrorProps = {
   value?: string
@@ -15,7 +16,7 @@ export type CodeMirrorProps = {
   elementProps?: React.ComponentProps<'div'>
 }
 
-const CodeMirror = React.forwardRef<HTMLDivElement, CodeMirrorProps>(
+const CodeMirror = forwardRef<HTMLDivElement, CodeMirrorProps>(
   (
     {
       value,
@@ -28,42 +29,79 @@ const CodeMirror = React.forwardRef<HTMLDivElement, CodeMirrorProps>(
     },
     ref
   ) => {
-    const innerRef = React.useRef<HTMLDivElement>(null)
+    const innerRef = useRef<HTMLDivElement>(null)
     const mergedRef = useMergeRefs(ref, innerRef)
 
-    const [editorView, setEditorView] = React.useState<EditorView | null>(null)
+    const [editorView, setEditorView] = useState<EditorView | null>(null)
 
-    React.useEffect(() => {
+    const updateExtension = useMemo<Extension | undefined>(
+      () => (onUpdate ? EditorView.updateListener.of(onUpdate) : undefined),
+      []
+    )
+
+    const extensions = useMemo<Extension>(
+      () =>
+        updateExtension
+          ? [updateExtension, ...passedExtensions]
+          : passedExtensions,
+      [updateExtension, passedExtensions]
+    )
+
+    const isFirstRender = useFirstRender()
+
+    useEffect(() => {
       const currentEditor = innerRef.current
       if (!currentEditor) return
 
-      const view = new EditorView({ parent: currentEditor })
+      const state = EditorState.create({
+        doc: value,
+        selection: selection,
+        extensions,
+      })
+
+      if (onEditorStateChange) onEditorStateChange(state)
+
+      const view = new EditorView({
+        parent: currentEditor,
+        state,
+      })
+
       setEditorView(view)
       if (onEditorViewChange) onEditorViewChange(view)
 
       return () => view.destroy()
     }, [innerRef])
 
-    React.useEffect(() => {
-      if (!editorView) return
+    // extensions
+    useEffect(() => {
+      // this is already handled on the first render
+      if (isFirstRender || !editorView) return
 
-      const extensions: Extension[] = []
-
-      if (onUpdate) extensions.push(EditorView.updateListener.of(onUpdate))
-
-      // keep current state, only change extensions
-      const editorState = EditorState.create({
-        doc: editorView.state.doc.toString(),
-        selection: editorView.state.selection,
-        extensions: [...extensions, ...passedExtensions],
+      // for some reason, I have to clear the extensions before setting them
+      // otherwise, I cannot remove extensions
+      editorView.dispatch({
+        effects: StateEffect.reconfigure.of([]),
       })
 
-      editorView.setState(editorState)
-      if (onEditorStateChange) onEditorStateChange(editorState)
-    }, [passedExtensions, editorView])
+      editorView.dispatch({
+        effects: StateEffect.reconfigure.of(extensions),
+      })
+    }, [passedExtensions])
 
-    React.useEffect(() => {
-      if (!editorView) return
+    // selection
+    useEffect(() => {
+      if (isFirstRender || !editorView) return
+
+      const transaction = editorView.state.update({
+        selection,
+      })
+
+      editorView.dispatch(transaction)
+    }, [selection, editorView])
+
+    // value
+    useEffect(() => {
+      if (isFirstRender || !editorView) return
 
       const transaction = editorView.state.update({
         changes: {
@@ -76,16 +114,6 @@ const CodeMirror = React.forwardRef<HTMLDivElement, CodeMirrorProps>(
 
       editorView.dispatch(transaction)
     }, [value, editorView])
-
-    React.useEffect(() => {
-      if (!editorView) return
-
-      const transaction = editorView.state.update({
-        selection,
-      })
-
-      editorView.dispatch(transaction)
-    }, [selection, editorView])
 
     return <div ref={mergedRef} {...elementProps} />
   }
