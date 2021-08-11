@@ -2,12 +2,12 @@ import { useMemo, useState, useEffect, forwardRef, useRef } from 'react'
 import { EditorState, EditorStateConfig, StateEffect } from '@codemirror/state'
 import { EditorView } from '@codemirror/view'
 import { useMergeRefs } from './merge-refs'
+import { useFirstRender } from './use-first-render'
 import type { Extension } from '@codemirror/state'
 import type { ViewUpdate } from '@codemirror/view'
-import { useFirstRender } from './use-first-render'
 
 export type CodeMirrorProps = {
-  value?: string
+  value?: EditorStateConfig['doc']
   selection?: EditorStateConfig['selection']
   onUpdate?: (update: ViewUpdate) => void
   onEditorViewChange?: (editorView: EditorView) => void

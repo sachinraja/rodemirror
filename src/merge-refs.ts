@@ -1,4 +1,6 @@
-// credit: https://github.com/JakeGinnivan/merge-refs-hook
+/**
+ * @see https://github.com/JakeGinnivan/merge-refs-hook
+ */
 import React from 'react'
 
 function setRefs<T>(ref: React.Ref<T>, value: T) {

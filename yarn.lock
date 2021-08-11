@@ -430,41 +430,41 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@codemirror/rangeset@npm:^0.18.2":
-  version: 0.18.4
-  resolution: "@codemirror/rangeset@npm:0.18.4"
+"@codemirror/rangeset@npm:^0.19.0":
+  version: 0.19.0
+  resolution: "@codemirror/rangeset@npm:0.19.0"
   dependencies:
-    "@codemirror/state": ^0.18.0
-  checksum: 80747ad7acf18fe65177c872787de898a85e236fc55aed1f525423a760e8dafb2b768213eb717459b367662824ad470fbdc088d93d542723f669d45b97ec9146
+    "@codemirror/state": ^0.19.0
+  checksum: 84fc8f1befbe9911af6ff719524776a7a794cd5934cde00eedeea553f3b6d5e75a291710f8c0c04af5f6234eec4c14601abde0799827e5e3a629ea37e7e8eb00
   languageName: node
   linkType: hard
 
-"@codemirror/state@npm:0.18.7, @codemirror/state@npm:^0.18.0":
-  version: 0.18.7
-  resolution: "@codemirror/state@npm:0.18.7"
+"@codemirror/state@npm:0.19.0, @codemirror/state@npm:^0.19.0":
+  version: 0.19.0
+  resolution: "@codemirror/state@npm:0.19.0"
   dependencies:
-    "@codemirror/text": ^0.18.0
-  checksum: d01d70527691483d2ec59f90556215311e56d25977c8c79d472392128bb1ae935a89e674ff80d457155f61def1e14e565b7850ec38282c0d94f4c0d4c201d6c2
+    "@codemirror/text": ^0.19.0
+  checksum: 26d017133fec9bedb62e9d962ccaced62d8366a80be5e8ce6f3d7456d6d5db5ba98a83b47025d41f19fa1ec3d39f5bbc76603a4576c5ca4be9298a3c81e7befe
   languageName: node
   linkType: hard
 
-"@codemirror/text@npm:^0.18.0, @codemirror/text@npm:^0.18.1":
-  version: 0.18.1
-  resolution: "@codemirror/text@npm:0.18.1"
-  checksum: 988c060bb8d399a55e23f4109edb4236da148a3a189a63b455c18ecd79b1a8f21059e1031d51ce8c43fa2597e980865837b2e04b6043835811fdde6917c5e27d
+"@codemirror/text@npm:^0.19.0":
+  version: 0.19.0
+  resolution: "@codemirror/text@npm:0.19.0"
+  checksum: 6624c51896e3c4bee7aef1070bdd3ff896a4feff1cc67dc54d52d054638ad6ae5770df2fa9336f55e02d1d11b47b118a264099e42d99796cd1b31331d22e785f
   languageName: node
   linkType: hard
 
-"@codemirror/view@npm:0.18.19":
-  version: 0.18.19
-  resolution: "@codemirror/view@npm:0.18.19"
+"@codemirror/view@npm:0.19.1":
+  version: 0.19.1
+  resolution: "@codemirror/view@npm:0.19.1"
   dependencies:
-    "@codemirror/rangeset": ^0.18.2
-    "@codemirror/state": ^0.18.0
-    "@codemirror/text": ^0.18.1
+    "@codemirror/rangeset": ^0.19.0
+    "@codemirror/state": ^0.19.0
+    "@codemirror/text": ^0.19.0
     style-mod: ^4.0.0
     w3c-keyname: ^2.2.4
-  checksum: 9fb720b8342383c6498f057893e75fb1dcd48749f1731f5da3494843f162bf67201bb00f0c53492041382e9bd2a5e1ed714472392f80f43422737cd751ff6073
+  checksum: ac42b2281c7e5aa9e8f7ef2f23ea2764912dbdddba289b7510d20b009b79664236c81dc918604a879df8adeffb6ebf77b798374f66c726c489adc8a2cef798d5
   languageName: node
   linkType: hard
 
@@ -6785,8 +6785,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "rodemirror@workspace:."
   dependencies:
-    "@codemirror/state": 0.18.7
-    "@codemirror/view": 0.18.19
+    "@codemirror/state": 0.19.0
+    "@codemirror/view": 0.19.1
     "@rollup/plugin-typescript": 8.2.5
     "@swc/core": 1.2.70
     "@swc/jest": 0.1.4
