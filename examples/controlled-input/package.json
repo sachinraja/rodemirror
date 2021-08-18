@@ -1,5 +1,5 @@
 {
-  "name": "typescript-nextjs",
+  "name": "controlled-input",
   "private": true,
   "scripts": {
     "dev": "next dev",
