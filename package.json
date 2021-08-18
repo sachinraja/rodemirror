@@ -87,7 +87,7 @@
     "semi": false,
     "singleQuote": true
   },
-  "packageManager": "yarn@3.0.0",
+  "packageManager": "yarn@3.0.1",
   "lint-staged": {
     "*.{js,ts,tsx,md,json,yml}": "prettier --write"
   }
