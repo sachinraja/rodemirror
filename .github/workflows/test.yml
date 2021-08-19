@@ -24,7 +24,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install dependencies
-        run: yarn install --no-immutable
+        run: yarn install
 
       - name: Check formatting
         run: yarn format:check
