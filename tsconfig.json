@@ -8,9 +8,7 @@
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "dist",
-    "declaration": true,
-    "declarationDir": "."
+    "noEmit": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
