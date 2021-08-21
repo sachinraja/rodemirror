@@ -28,7 +28,7 @@ const Editor = () => {
 }
 ```
 
-The `useMemo` is so that the extensions are not recreated each time, which would cause a recreation of the state. You'll want to do the same with the `selection` prop.
+The `useMemo` is so that the extensions are not recreated each time, which would cause unnecessary editor transactions. You'll want to do the same with the `selection` prop.
 
 ### Uncontrolled
 
