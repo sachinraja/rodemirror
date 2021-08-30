@@ -455,16 +455,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@codemirror/view@npm:0.19.1":
-  version: 0.19.1
-  resolution: "@codemirror/view@npm:0.19.1"
+"@codemirror/view@npm:0.19.3":
+  version: 0.19.3
+  resolution: "@codemirror/view@npm:0.19.3"
   dependencies:
     "@codemirror/rangeset": ^0.19.0
     "@codemirror/state": ^0.19.0
     "@codemirror/text": ^0.19.0
     style-mod: ^4.0.0
     w3c-keyname: ^2.2.4
-  checksum: ac42b2281c7e5aa9e8f7ef2f23ea2764912dbdddba289b7510d20b009b79664236c81dc918604a879df8adeffb6ebf77b798374f66c726c489adc8a2cef798d5
+  checksum: 42bcd024772151d46169440f5a300a8975028192840474b0b3a2e5f05476c1cab0d5a9e9e64795c34afffce3c9c2e3fb2c1e206fadc27bd0d167811aea0cdf07
   languageName: node
   linkType: hard
 
@@ -6656,7 +6656,7 @@ __metadata:
   resolution: "rodemirror@workspace:."
   dependencies:
     "@codemirror/state": 0.19.1
-    "@codemirror/view": 0.19.1
+    "@codemirror/view": 0.19.3
     "@rollup/plugin-typescript": 8.2.5
     "@swc/core": 1.2.80
     "@swc/jest": 0.1.4
