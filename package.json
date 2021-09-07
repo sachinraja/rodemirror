@@ -66,7 +66,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "rimraf": "3.0.2",
-    "rollup": "2.55.1",
+    "rollup": "2.56.3",
     "rollup-plugin-swc": "0.2.0",
     "semantic-release": "17.4.7",
     "tslib": "2.3.1",
