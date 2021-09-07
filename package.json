@@ -60,7 +60,7 @@
     "@types/jest": "26.0.24",
     "@types/react": "17.0.20",
     "husky": "7.0.2",
-    "jest": "27.0.6",
+    "jest": "27.1.0",
     "lint-staged": "11.1.2",
     "prettier": "2.3.2",
     "react": "17.0.2",
