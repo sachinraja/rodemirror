@@ -29,5 +29,8 @@ jobs:
       - name: Check formatting
         run: yarn format:check
 
+      - name: Type check
+        run: yarn type-check
+
       - name: Test
         run: yarn test
