@@ -54,7 +54,7 @@
     "@codemirror/view": "0.19.4",
     "@rollup/plugin-typescript": "8.2.5",
     "@swc/core": "1.2.84",
-    "@swc/jest": "0.1.4",
+    "@swc/jest": "0.2.2",
     "@testing-library/jest-dom": "5.14.1",
     "@testing-library/react": "12.0.0",
     "@types/jest": "26.0.24",
