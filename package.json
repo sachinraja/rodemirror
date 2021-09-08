@@ -20,8 +20,8 @@
     "build": "yarn clean && rollup -c",
     "type-check": "tsc",
     "test": "jest",
+    "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "format:fix": "prettier --write .",
     "semantic-release": "semantic-release",
     "prepack": "yarn build",
     "postinstallDev": "husky install"
