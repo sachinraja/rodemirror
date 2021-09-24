@@ -1,9 +1,11 @@
 # Dependency directories
-node_modules/
+node_modules
 
 # build output
 dist
 
-examples/*/pnpm-lock.yaml
-examples/*/package-lock.json
-examples/*/yarn.lock
+/examples/*/pnpm-lock.yaml
+/examples/*/package-lock.json
+/examples/*/yarn.lock
+
+/rodemirror-0.0.0-development.tgz

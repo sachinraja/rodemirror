@@ -1,15 +1,33 @@
 import path from 'path'
-import typescript from '@rollup/plugin-typescript'
+import nodeResolve from '@rollup/plugin-node-resolve'
 import swc from 'rollup-plugin-swc'
+import dts from 'rollup-plugin-dts'
 
 const distDir = 'dist'
 
-export default {
-  input: path.join('src', 'index.tsx'),
-  external: (id) => !/^(\.?\/|\w:)/.test(id),
-  output: [
-    { file: path.join(distDir, 'index.cjs'), format: 'cjs' },
-    { file: path.join(distDir, 'index.js'), format: 'esm' },
-  ],
-  plugins: [typescript({ tsconfig: './tsconfig.build.json' }), swc()],
-}
+const input = path.join('src', 'index.tsx')
+const external = (id) => !/^(\.?\/|\w:)/.test(id)
+
+export default [
+  {
+    input,
+    external,
+    output: [
+      { file: path.join(distDir, 'index.cjs'), format: 'cjs' },
+      { file: path.join(distDir, 'index.js'), format: 'esm' },
+    ],
+    plugins: [
+      nodeResolve({
+        extensions: ['.ts', '.tsx'],
+      }),
+      swc(),
+    ],
+  },
+  {
+    input,
+    external,
+    output: { file: path.join(distDir, 'index.d.ts'), format: 'esm' },
+
+    plugins: [dts()],
+  },
+]

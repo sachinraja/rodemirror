@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@codemirror/state': 0.19.2
   '@codemirror/view': 0.19.7
-  '@rollup/plugin-typescript': 8.2.5
+  '@rollup/plugin-node-resolve': 13.0.5
   '@swc/core': 1.2.88
   '@swc/jest': 0.2.3
   '@testing-library/jest-dom': 5.14.1
@@ -18,6 +18,7 @@ specifiers:
   react-dom: 17.0.2
   rimraf: 3.0.2
   rollup: 2.56.3
+  rollup-plugin-dts: 4.0.0
   rollup-plugin-swc: 0.2.0
   semantic-release: 18.0.0
   tslib: 2.3.1
@@ -26,7 +27,7 @@ specifiers:
 devDependencies:
   '@codemirror/state': 0.19.2
   '@codemirror/view': 0.19.7
-  '@rollup/plugin-typescript': 8.2.5_d671d3387afbf1a138cd7f3f4762053b
+  '@rollup/plugin-node-resolve': 13.0.5_rollup@2.56.3
   '@swc/core': 1.2.88
   '@swc/jest': 0.2.3_@swc+core@1.2.88
   '@testing-library/jest-dom': 5.14.1
@@ -41,6 +42,7 @@ devDependencies:
   react-dom: 17.0.2_react@17.0.2
   rimraf: 3.0.2
   rollup: 2.56.3
+  rollup-plugin-dts: 4.0.0_rollup@2.56.3+typescript@4.4.3
   rollup-plugin-swc: 0.2.0_@swc+core@1.2.88+rollup@2.56.3
   semantic-release: 18.0.0
   tslib: 2.3.1
@@ -767,19 +769,19 @@ packages:
       '@octokit/openapi-types': 10.5.0
     dev: true
 
-  /@rollup/plugin-typescript/8.2.5_d671d3387afbf1a138cd7f3f4762053b:
-    resolution: {integrity: sha512-QL/LvDol/PAGB2O0S7/+q2HpSUNodpw7z6nGn9BfoVCPOZ0r4EALrojFU29Bkoi2Hr2jgTocTejJ5GGWZfOxbQ==}
-    engines: {node: '>=8.0.0'}
+  /@rollup/plugin-node-resolve/13.0.5_rollup@2.56.3:
+    resolution: {integrity: sha512-mVaw6uxtvuGx/XCI4qBQXsDZJUfyx5vp39iE0J/7Hd6wDhEbjHr6aES7Nr9yWbuE0BY+oKp6N7Bq6jX5NCGNmQ==}
+    engines: {node: '>= 10.0.0'}
     peerDependencies:
-      rollup: ^2.14.0
-      tslib: '*'
-      typescript: '>=3.7.0'
+      rollup: ^2.42.0
     dependencies:
       '@rollup/pluginutils': 3.1.0_rollup@2.56.3
+      '@types/resolve': 1.17.1
+      builtin-modules: 3.2.0
+      deepmerge: 4.2.2
+      is-module: 1.0.0
       resolve: 1.20.0
       rollup: 2.56.3
-      tslib: 2.3.1
-      typescript: 4.4.3
     dev: true
 
   /@rollup/pluginutils/3.1.0_rollup@2.56.3:
@@ -1189,6 +1191,12 @@ packages:
       csstype: 3.0.9
     dev: true
 
+  /@types/resolve/1.17.1:
+    resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
+    dependencies:
+      '@types/node': 16.9.6
+    dev: true
+
   /@types/retry/0.12.1:
     resolution: {integrity: sha512-xoDlM2S4ortawSWORYqsdU+2rxdh4LRW9ytc3zmT37RIKQh6IHyKwwtKhKis9ah8ol07DCkZxPt8BBvPjC6v4g==}
     dev: true
@@ -1488,6 +1496,11 @@ packages:
 
   /buffer-from/1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
+    dev: true
+
+  /builtin-modules/3.2.0:
+    resolution: {integrity: sha512-lGzLKcioL90C7wMczpkY0n/oART3MbBa8R9OFGE1rJxoVI86u4WAGfEk8Wjv10eKSyTHVGkSo3bvBylCEtk7LA==}
+    engines: {node: '>=6'}
     dev: true
 
   /callsites/3.1.0:
@@ -2460,6 +2473,10 @@ packages:
       is-extglob: 2.1.1
     dev: true
 
+  /is-module/1.0.0:
+    resolution: {integrity: sha1-Mlj7afeMFNW4FdZkM2tM/7ZEFZE=}
+    dev: true
+
   /is-number/7.0.0:
     resolution: {integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==}
     engines: {node: '>=0.12.0'}
@@ -3314,6 +3331,12 @@ packages:
     hasBin: true
     dev: true
 
+  /magic-string/0.25.7:
+    resolution: {integrity: sha512-4CrMT5DOHTDk4HYDlzmwu4FVCcIYI8gauveasrdCu2IKIFOJ3f0v/8MDGJCDL9oD2ppz/Av1b0Nj345H9M+XIA==}
+    dependencies:
+      sourcemap-codec: 1.4.8
+    dev: true
+
   /make-dir/3.1.0:
     resolution: {integrity: sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==}
     engines: {node: '>=8'}
@@ -4026,6 +4049,20 @@ packages:
       glob: 7.2.0
     dev: true
 
+  /rollup-plugin-dts/4.0.0_rollup@2.56.3+typescript@4.4.3:
+    resolution: {integrity: sha512-tgUC8CxVgtlLDVloUEA9uACVaxjJHuYxlDSTp1LdCexA0bJx+RuMi45RjdLG9RTCgZlV5YBh3O7P2u6dS1KlnA==}
+    engines: {node: '>=v12.22.5'}
+    peerDependencies:
+      rollup: ^2.56.3
+      typescript: ^4.4.2
+    dependencies:
+      magic-string: 0.25.7
+      rollup: 2.56.3
+      typescript: 4.4.3
+    optionalDependencies:
+      '@babel/code-frame': 7.14.5
+    dev: true
+
   /rollup-plugin-swc/0.2.0_@swc+core@1.2.88+rollup@2.56.3:
     resolution: {integrity: sha512-caZSD80g4RwVxkiaeAp/TYvWGzWjzVKvJKBTSKitcKE95MQrnKm8qICLMwCOdvs4XMgc0RgcsCmVkckl8oMDCg==}
     peerDependencies:
@@ -4233,6 +4270,10 @@ packages:
   /source-map/0.7.3:
     resolution: {integrity: sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==}
     engines: {node: '>= 8'}
+    dev: true
+
+  /sourcemap-codec/1.4.8:
+    resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
     dev: true
 
   /spawn-error-forwarder/1.0.0:
