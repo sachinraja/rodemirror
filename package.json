@@ -17,14 +17,14 @@
   "sideEffects": false,
   "scripts": {
     "clean": "rimraf dist",
-    "build": "yarn clean && rollup -c",
+    "build": "pnpm clean && rollup -c",
     "type-check": "tsc",
     "test": "jest",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "semantic-release": "semantic-release",
-    "prepack": "yarn build",
-    "postinstallDev": "husky install"
+    "prepublishOnly": "yarn build",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
