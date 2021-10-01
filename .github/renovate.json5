@@ -1,3 +1,8 @@
 {
   extends: ['config:js-lib', 'github>sachinraja/renovate-config:js'],
+  packageRules: [
+    {
+      excludePackageNames: ['rodemirror'],
+    },
+  ],
 }
