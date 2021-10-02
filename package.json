@@ -23,7 +23,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "semantic-release": "semantic-release",
-    "prepublishOnly": "yarn build",
+    "prepublishOnly": "pnpm build",
     "prepare": "husky install"
   },
   "repository": {
@@ -88,7 +88,6 @@
     "semi": false,
     "singleQuote": true
   },
-  "packageManager": "yarn@3.0.1",
   "lint-staged": {
     "*.{js,ts,tsx,md,json,yml}": "prettier --write"
   }
