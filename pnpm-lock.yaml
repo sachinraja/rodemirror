@@ -8,7 +8,7 @@ importers:
       '@codemirror/view': 0.19.9
       '@rollup/plugin-node-resolve': 13.0.5
       '@swc/core': 1.2.93
-      '@swc/jest': 0.2.3
+      '@swc/jest': 0.2.4
       '@testing-library/jest-dom': 5.14.1
       '@testing-library/react': 12.1.0
       '@types/jest': 27.0.1
@@ -31,7 +31,7 @@ importers:
       '@codemirror/view': 0.19.9
       '@rollup/plugin-node-resolve': 13.0.5_rollup@2.56.3
       '@swc/core': 1.2.93
-      '@swc/jest': 0.2.3_@swc+core@1.2.93
+      '@swc/jest': 0.2.4_@swc+core@1.2.93
       '@testing-library/jest-dom': 5.14.1
       '@testing-library/react': 12.1.0_react-dom@17.0.2+react@17.0.2
       '@types/jest': 27.0.1
@@ -1462,8 +1462,8 @@ packages:
       '@swc/core-win32-x64-msvc': 1.2.93
     dev: true
 
-  /@swc/jest/0.2.3_@swc+core@1.2.93:
-    resolution: {integrity: sha512-ARZIY5OkXdFRQLHc/1i+yKrl0H3B1sa7Bu9XE8yTvYZZ4G5Ewu6oyyJBM52TiROP6EpMcF7ZeQQsKMZvzuKkNw==}
+  /@swc/jest/0.2.4_@swc+core@1.2.93:
+    resolution: {integrity: sha512-+50IX4juKZUK3j/J6FTDFiI+upAlfbbxgVM4dkt0bx3m4njFat1z+f2pqwAj7BvhK5XFiBMpVQ6dVgvZKUHKgw==}
     peerDependencies:
       '@swc/core': '*'
     dependencies:
