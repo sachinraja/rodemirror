@@ -52,7 +52,6 @@
   "devDependencies": {
     "@codemirror/state": "0.19.2",
     "@codemirror/view": "0.19.9",
-    "@rollup/plugin-node-resolve": "13.0.5",
     "@swc/core": "1.2.93",
     "@swc/jest": "0.2.4",
     "@testing-library/jest-dom": "5.14.1",
