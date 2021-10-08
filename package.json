@@ -17,7 +17,7 @@
   "sideEffects": false,
   "scripts": {
     "clean": "rimraf dist",
-    "build": "pnpm clean && rollup -c",
+    "build": "pnpm clean && tsup src/index.tsx --format esm,cjs --dts --inject ./react-import.js",
     "type-check": "tsc",
     "test": "jest",
     "format": "prettier --write .",
@@ -66,11 +66,8 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "rimraf": "3.0.2",
-    "rollup": "2.56.3",
-    "rollup-plugin-dts": "4.0.0",
-    "rollup-plugin-swc": "0.2.0",
     "semantic-release": "18.0.0",
-    "tslib": "2.3.1",
+    "tsup": "5.4.0",
     "typescript": "4.4.3"
   },
   "release": {
