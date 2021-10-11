@@ -9,7 +9,7 @@ importers:
       '@swc/core': 1.2.95
       '@swc/jest': 0.2.4
       '@testing-library/jest-dom': 5.14.1
-      '@testing-library/react': 12.1.0
+      '@testing-library/react': 12.1.2
       '@types/jest': 27.0.1
       '@types/react': 17.0.21
       husky: 7.0.2
@@ -28,7 +28,7 @@ importers:
       '@swc/core': 1.2.95
       '@swc/jest': 0.2.4_@swc+core@1.2.95
       '@testing-library/jest-dom': 5.14.1
-      '@testing-library/react': 12.1.0_react-dom@17.0.2+react@17.0.2
+      '@testing-library/react': 12.1.2_react-dom@17.0.2+react@17.0.2
       '@types/jest': 27.0.1
       '@types/react': 17.0.21
       husky: 7.0.2
@@ -1464,8 +1464,8 @@ packages:
       redent: 3.0.0
     dev: true
 
-  /@testing-library/react/12.1.0_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-Ge3Ht3qXE82Yv9lyPpQ7ZWgzo/HgOcHu569Y4ZGWcZME38iOFiOg87qnu6hTEa8jTJVL7zYovnvD3GE2nsNIoQ==}
+  /@testing-library/react/12.1.2_react-dom@17.0.2+react@17.0.2:
+    resolution: {integrity: sha512-ihQiEOklNyHIpo2Y8FREkyD1QAea054U0MVbwH1m8N9TxeFz+KoJ9LkqoKqJlzx2JDm56DVwaJ1r36JYxZM05g==}
     engines: {node: '>=12'}
     peerDependencies:
       react: '*'
