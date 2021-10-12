@@ -11,7 +11,7 @@ importers:
       '@testing-library/jest-dom': 5.14.1
       '@testing-library/react': 12.1.2
       '@types/jest': 27.0.2
-      '@types/react': 17.0.28
+      '@types/react': 17.0.29
       husky: 7.0.2
       jest: 27.2.5
       lint-staged: 11.2.3
@@ -30,7 +30,7 @@ importers:
       '@testing-library/jest-dom': 5.14.1
       '@testing-library/react': 12.1.2_react-dom@17.0.2+react@17.0.2
       '@types/jest': 27.0.2
-      '@types/react': 17.0.28
+      '@types/react': 17.0.29
       husky: 7.0.2
       jest: 27.2.5
       lint-staged: 11.2.3
@@ -1606,8 +1606,8 @@ packages:
       csstype: 3.0.9
     dev: true
 
-  /@types/react/17.0.28:
-    resolution: {integrity: sha512-6OmflHgk2DlnsFi49kBW3/Dql1GT32bYSk+A6tFBDAt0T0bxotBdQwXkm77lVlczHwY6+Wu6IfpsGqArjOYtaA==}
+  /@types/react/17.0.29:
+    resolution: {integrity: sha512-HSenIfBEBZ70BLrrVhtEtHpqaP79waauPtA8XKlczTxL3hXrW/ElGNLTpD1TmqkykgGlOAK55+D3SmUHEirpFw==}
     dependencies:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
