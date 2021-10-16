@@ -35,7 +35,11 @@ The `useMemo` is so that the extensions are not recreated each time, which would
 Create an uncontrolled component for reading values.
 
 ```tsx
-import { useState } from 'react'
+import CodeMirror from 'rodemirror'
+import { basicSetup } from '@codemirror/basic-setup'
+import { oneDark } from '@codemirror/theme-one-dark'
+import { javascript } from '@codemirror/lang-javascript'
+import { useMemo, useState } from 'react'
 import type { Extension } from '@codemirror/state'
 
 const Editor = () => {
@@ -62,26 +66,50 @@ const Editor = () => {
 }
 ```
 
-### Controlled
+### Controlled/Separate Reading and Writing
 
-Create a controlled component for reading and writing values. Simply replace the `defaultValue` with the `value` in state (based off the uncontrolled example). This is not recommended as you will be overwriting the entire document on each input and the editor will become very slow. This also does not work with features such as autocomplete. If you must pass in a controlled value, you can separate the reading and writing values and only update when necessary.
+A truly controlled value is not recommended as you will be overwriting the entire documento n each input and the editor will become very slow. This also does not work with features such as autocomplete. If you must pass in a controlled value, you can separate the reading and writing values and only update when necessary:
 
-```diff
-const defaultValue = "console.log('Hello world!')"
-const [value, setValue] = useState(defaultValue)
+```tsx
+import CodeMirror from 'rodemirror'
+import { basicSetup } from '@codemirror/basic-setup'
+import { oneDark } from '@codemirror/theme-one-dark'
+import { javascript } from '@codemirror/lang-javascript'
+import { useMemo, useState, useEffect } from 'react'
+import type { Extension } from '@codemirror/state'
 
-return (
-  <CodeMirror
--   value={defaultValue}
-+   value={value}
-    onUpdate={(v) => {
-      if (v.docChanged) {
-        setValue(v.state.doc.toString())
-      }
-    }}
-    extensions={extensions}
-  />
-)
+const Editor = ({ shouldAddLogOnChange }) => {
+  const Editor = ({
+    shouldAddLogOnChange,
+  }: {
+    shouldAddLogOnChange: boolean
+  }) => {
+    const extensions = useMemo<Extension[]>(
+      () => [basicSetup, oneDark, javascript()],
+      []
+    )
+
+    const defaultValue = "console.log('Hello world!')"
+    const [readValue, setReadValue] = useState(defaultValue)
+    const [writeValue, setWriteValue] = useState(defaultValue)
+
+    // example
+    useEffect(() => {
+      setWriteValue(`${readValue}\nconsole.log('hello world')`)
+    }, [shouldAddLogOnChange])
+
+    return (
+      <CodeMirror
+        value={writeValue}
+        onUpdate={(v) => {
+          if (v.docChanged) {
+            setReadValue(v.state.doc.toString())
+          }
+        }}
+        extensions={extensions}
+      />
+    )
+  }
 ```
 
 ### [EditorView](https://codemirror.net/6/docs/ref/#view.EditorView) and [EditorState](https://codemirror.net/6/docs/ref/#state.EditorState) (Complex Use Cases)

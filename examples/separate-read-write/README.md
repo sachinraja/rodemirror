@@ -1,6 +1,6 @@
-# controlled-input
+# separate-read-write
 
-Store a controlled value.
+Manage a separate reading and writing value.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 

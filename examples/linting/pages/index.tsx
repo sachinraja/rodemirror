@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { basicSetup } from '@codemirror/basic-setup'
 import { oneDark } from '@codemirror/theme-one-dark'
 import { esLint, javascript } from '@codemirror/lang-javascript'
@@ -13,8 +13,6 @@ import type { EditorView } from '@codemirror/view'
 
 export default function Home() {
   const esLintLinter = useMemo(() => esLint(new Linter()), [])
-
-  const [editorView, setEditorView] = useState<EditorView | null>(null)
 
   const extensions = useMemo(
     () => [basicSetup, oneDark, javascript(), linter(esLintLinter)],

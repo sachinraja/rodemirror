@@ -1,5 +1,5 @@
 {
-  "name": "controlled-input",
+  "name": "separate-read-write",
   "private": true,
   "scripts": {
     "dev": "next dev",
