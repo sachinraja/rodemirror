@@ -22,6 +22,7 @@ export default function Home() {
   const [value, setValue] = useState(defaultValue)
 
   const [editorView, setEditorView] = useState<EditorView | null>(null)
+
   return (
     <>
       <CodeMirror

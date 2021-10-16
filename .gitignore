@@ -3,3 +3,6 @@ node_modules
 
 # build output
 dist
+
+examples/*/package-lock.json
+examples/*/pnpm-lock.yaml
