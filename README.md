@@ -68,7 +68,7 @@ const Editor = () => {
 
 ### Controlled/Separate Reading and Writing
 
-A truly controlled value is not recommended as you will be overwriting the entire documento n each input and the editor will become very slow. This also does not work with features such as autocomplete. If you must pass in a controlled value, you can separate the reading and writing values and only update when necessary:
+A truly controlled value is not recommended as you will be overwriting the entire document on each input and the editor will become very slow. This also does not work with features such as autocomplete. If you must pass in a controlled value, you can separate the reading and writing values and only update when necessary:
 
 ```tsx
 import CodeMirror from 'rodemirror'
