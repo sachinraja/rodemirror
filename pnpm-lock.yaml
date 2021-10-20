@@ -4,7 +4,7 @@ specifiers:
   '@codemirror/state': 0.19.2
   '@codemirror/view': 0.19.9
   '@swc/core': 1.2.101
-  '@swc/jest': 0.2.4
+  '@swc/jest': 0.2.5
   '@testing-library/jest-dom': 5.14.1
   '@testing-library/react': 12.1.2
   '@types/jest': 27.0.2
@@ -24,7 +24,7 @@ devDependencies:
   '@codemirror/state': 0.19.2
   '@codemirror/view': 0.19.9
   '@swc/core': 1.2.101
-  '@swc/jest': 0.2.4_@swc+core@1.2.101
+  '@swc/jest': 0.2.5_@swc+core@1.2.101
   '@testing-library/jest-dom': 5.14.1
   '@testing-library/react': 12.1.2_react-dom@17.0.2+react@17.0.2
   '@types/jest': 27.0.2
@@ -1003,8 +1003,8 @@ packages:
       '@swc/core-win32-x64-msvc': 1.2.101
     dev: true
 
-  /@swc/jest/0.2.4_@swc+core@1.2.101:
-    resolution: {integrity: sha512-+50IX4juKZUK3j/J6FTDFiI+upAlfbbxgVM4dkt0bx3m4njFat1z+f2pqwAj7BvhK5XFiBMpVQ6dVgvZKUHKgw==}
+  /@swc/jest/0.2.5_@swc+core@1.2.101:
+    resolution: {integrity: sha512-7Vb+RXuXWk47QbOPJ3hwSIMCwUVylp7JUhUITVtMe3hMoBv0IMfVCML9p6jiRhoBAzjzYDPPteKoVxSUJjFNPA==}
     peerDependencies:
       '@swc/core': '*'
     dependencies:
