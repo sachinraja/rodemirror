@@ -8,7 +8,7 @@ specifiers:
   '@testing-library/jest-dom': 5.14.1
   '@testing-library/react': 12.1.2
   '@types/jest': 27.0.2
-  '@types/react': 17.0.30
+  '@types/react': 17.0.31
   husky: 7.0.2
   jest: 27.3.1
   lint-staged: 11.2.3
@@ -28,7 +28,7 @@ devDependencies:
   '@testing-library/jest-dom': 5.14.1
   '@testing-library/react': 12.1.2_react-dom@17.0.2+react@17.0.2
   '@types/jest': 27.0.2
-  '@types/react': 17.0.30
+  '@types/react': 17.0.31
   husky: 7.0.2
   jest: 27.3.1
   lint-staged: 11.2.3
@@ -1156,8 +1156,8 @@ packages:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
     dev: true
 
-  /@types/react/17.0.30:
-    resolution: {integrity: sha512-3Dt/A8gd3TCXi2aRe84y7cK1K8G+N9CZRDG8kDGguOKa0kf/ZkSwTmVIDPsm/KbQOVMaDJXwhBtuOXxqwdpWVg==}
+  /@types/react/17.0.31:
+    resolution: {integrity: sha512-MQSR5EL4JZtdWRvqDgz9kXhSDDoy2zMTYyg7UhP+FZ5ttUOocWyxiqFJiI57sUG0BtaEX7WDXYQlkCYkb3X9vQ==}
     dependencies:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
