@@ -11,7 +11,7 @@ specifiers:
   '@types/react': 17.0.33
   husky: 7.0.4
   jest: 27.3.1
-  lint-staged: 11.2.4
+  lint-staged: 11.2.5
   prettier: 2.4.1
   react: 17.0.2
   react-dom: 17.0.2
@@ -31,7 +31,7 @@ devDependencies:
   '@types/react': 17.0.33
   husky: 7.0.4
   jest: 27.3.1
-  lint-staged: 11.2.4
+  lint-staged: 11.2.5
   prettier: 2.4.1
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -3430,8 +3430,8 @@ packages:
     resolution: {integrity: sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=}
     dev: true
 
-  /lint-staged/11.2.4:
-    resolution: {integrity: sha512-aTUqcPDSV05EyKlMT4N5h7tmnevKfAxI3xZkRb+DHfmcFaoCxfxVvpqlLMCVGy3EYle9JYER2nA5zc4eNTkZVQ==}
+  /lint-staged/11.2.5:
+    resolution: {integrity: sha512-bD6FeKyRtMA3jXcNg/J0fuJmwDN8yaoTdqliFcEl8pFTHiP9NYwQCeZwBoZ8FEXx4lj/pli3oFehr86XYvMNEA==}
     hasBin: true
     dependencies:
       cli-truncate: 2.1.0
