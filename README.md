@@ -4,10 +4,16 @@ React component for [CodeMirror 6](https://codemirror.net/6/)
 
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
+## Features
+
+- Lightweight, 829B minified + gzipped
+- Simple, wraps CodeMirror's view and state and gets out of your way
+- Efficient, only renders when necessary and uses StateEffects to update the editor state on prop changes. The view and state are **never** recreated.
+
 ## Installation
 
 ```bash
-npm i rodemirror @codemirror/state @codemirror/view
+npm install rodemirror @codemirror/state @codemirror/view
 ```
 
 ## Usage
