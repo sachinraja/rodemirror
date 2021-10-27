@@ -8,7 +8,7 @@ React component for [CodeMirror 6](https://codemirror.net/6/)
 
 - Lightweight, 829B minified + gzipped
 - Simple, wraps CodeMirror's view and state and gets out of your way
-- Efficient, only renders when necessary and uses StateEffects to update the editor state on prop changes. The view and state are **never** recreated.
+- Efficient, only renders when necessary and uses [`StateEffect`](https://codemirror.net/6/docs/ref/#state.StateEffect) to update the editor state on prop changes. The view and state are **never** recreated.
 
 ## Installation
 
