@@ -50,8 +50,8 @@
     "react": "^16 || ^17"
   },
   "devDependencies": {
-    "@codemirror/state": "0.19.2",
-    "@codemirror/view": "0.19.10",
+    "@codemirror/state": "0.19.3",
+    "@codemirror/view": "0.19.11",
     "@swc/core": "1.2.106",
     "@swc/jest": "0.2.5",
     "@testing-library/jest-dom": "5.15.0",
