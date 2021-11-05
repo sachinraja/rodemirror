@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@codemirror/state': 0.19.3
+  '@codemirror/state': 0.19.4
   '@codemirror/view': 0.19.12
   '@swc/core': 1.2.106
   '@swc/jest': 0.2.5
@@ -21,7 +21,7 @@ specifiers:
   typescript: 4.4.4
 
 devDependencies:
-  '@codemirror/state': 0.19.3
+  '@codemirror/state': 0.19.4
   '@codemirror/view': 0.19.12
   '@swc/core': 1.2.106
   '@swc/jest': 0.2.5_@swc+core@1.2.106
@@ -401,11 +401,11 @@ packages:
   /@codemirror/rangeset/0.19.1:
     resolution: {integrity: sha512-WaKTEw8JB/3QFlQzpdgRoklopcWvG8O/Xp+rxxOfFKYTaeaejpY/tjpyBBg+Ea65Ka3m7+pPp9d5j/oR2rd9NA==}
     dependencies:
-      '@codemirror/state': 0.19.3
+      '@codemirror/state': 0.19.4
     dev: true
 
-  /@codemirror/state/0.19.3:
-    resolution: {integrity: sha512-mMCOQWB4Kua/XPYRsY95IwX+uDcoD+n4G0FTDi0jNJHYoyWTkPpHjT6zt6mfl4kpqwqBJ8/WQBuztvpstblvvQ==}
+  /@codemirror/state/0.19.4:
+    resolution: {integrity: sha512-PLsY1PvuGynylzv4FVEi1vDz4gituIxJR4XdEVT4+UK6C2l14Y2TGLkUTw3D8xlq+xmY1J1TR7UbicZtJIxO6A==}
     dependencies:
       '@codemirror/text': 0.19.4
     dev: true
@@ -418,7 +418,7 @@ packages:
     resolution: {integrity: sha512-nvgqUaIGaRfCwpa/BI83SsOOenEoxBp6PlXBdw+jSfxgYGAYIdB3kuPzExPixZemvu7+ZoJRO2iEjCKigLIOaA==}
     dependencies:
       '@codemirror/rangeset': 0.19.1
-      '@codemirror/state': 0.19.3
+      '@codemirror/state': 0.19.4
       '@codemirror/text': 0.19.4
       style-mod: 4.0.0
       w3c-keyname: 2.2.4

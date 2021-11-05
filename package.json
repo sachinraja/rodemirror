@@ -50,7 +50,7 @@
     "react": "^16 || ^17"
   },
   "devDependencies": {
-    "@codemirror/state": "0.19.3",
+    "@codemirror/state": "0.19.4",
     "@codemirror/view": "0.19.12",
     "@swc/core": "1.2.106",
     "@swc/jest": "0.2.5",
