@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@codemirror/state': 0.19.5
-  '@codemirror/view': 0.19.16
+  '@codemirror/view': 0.19.18
   '@swc/core': 1.2.108
   '@swc/jest': 0.2.5
   '@testing-library/jest-dom': 5.15.0
@@ -22,7 +22,7 @@ specifiers:
 
 devDependencies:
   '@codemirror/state': 0.19.5
-  '@codemirror/view': 0.19.16
+  '@codemirror/view': 0.19.18
   '@swc/core': 1.2.108
   '@swc/jest': 0.2.5_@swc+core@1.2.108
   '@testing-library/jest-dom': 5.15.0
@@ -414,8 +414,8 @@ packages:
     resolution: {integrity: sha512-Msd1ImS+Mmref28+oyoOrBwqjH4lbCVO/5ol2jRaCEYH7+KaMocxFADZomPLnMPgDW6Gc4mu/K2lj8IjAOFdTA==}
     dev: true
 
-  /@codemirror/view/0.19.16:
-    resolution: {integrity: sha512-VumZoAQRX9BhHU0cD4++izO4mfCH36J61xz9MxtfOKEggzuKlyuGDrdix67FhoDfYiDRvqv9lt1J5YZ/zdU2WA==}
+  /@codemirror/view/0.19.18:
+    resolution: {integrity: sha512-OxYc+6PvppfFVKcheLZtqRxzYoiC9dGzKZfCBzx63en/HsKuM2ZBOHHKH57ZtGNcI2ctW0j5Wr2yNm9QAdgGsA==}
     dependencies:
       '@codemirror/rangeset': 0.19.1
       '@codemirror/state': 0.19.5
