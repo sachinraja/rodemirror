@@ -18,7 +18,7 @@ specifiers:
   rimraf: 3.0.2
   semantic-release: 18.0.0
   tsup: 5.7.1
-  typescript: 4.4.4
+  typescript: 4.5.2
 
 devDependencies:
   '@codemirror/state': 0.19.5
@@ -37,8 +37,8 @@ devDependencies:
   react-dom: 17.0.2_react@17.0.2
   rimraf: 3.0.2
   semantic-release: 18.0.0
-  tsup: 5.7.1_typescript@4.4.4
-  typescript: 4.4.4
+  tsup: 5.7.1_typescript@4.5.2
+  typescript: 4.5.2
 
 packages:
 
@@ -4817,7 +4817,7 @@ packages:
     resolution: {integrity: sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==}
     dev: true
 
-  /tsup/5.7.1_typescript@4.4.4:
+  /tsup/5.7.1_typescript@4.5.2:
     resolution: {integrity: sha512-ZRhyJE2QoVKyCKz6i6wh/4LIpD9xpQ1J4JIY6ZupxxLB1aQfVl7N16Ur9+ZjqknPt/jRn/wnV/OnypuRP0MgBQ==}
     hasBin: true
     peerDependencies:
@@ -4839,7 +4839,7 @@ packages:
       rollup: 2.56.3
       sucrase: 3.20.2
       tree-kill: 1.2.2
-      typescript: 4.4.4
+      typescript: 4.5.2
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -4888,8 +4888,8 @@ packages:
       is-typedarray: 1.0.0
     dev: true
 
-  /typescript/4.4.4:
-    resolution: {integrity: sha512-DqGhF5IKoBl8WNf8C1gu8q0xZSInh9j1kJJMqT3a94w1JzVaBU4EXOSMrz9yDqMT0xt3selp83fuFMQ0uzv6qA==}
+  /typescript/4.5.2:
+    resolution: {integrity: sha512-5BlMof9H1yGt0P8/WF+wPNw6GfctgGjXp5hkblpyT+8rkASSmkUKMXrxR0Xg8ThVCi/JnHQiKXeBaEwCeQwMFw==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
