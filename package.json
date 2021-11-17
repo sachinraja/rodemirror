@@ -52,7 +52,7 @@
   "devDependencies": {
     "@codemirror/state": "0.19.5",
     "@codemirror/view": "0.19.19",
-    "@swc/core": "1.2.109",
+    "@swc/core": "1.2.110",
     "@swc/jest": "0.2.5",
     "@testing-library/jest-dom": "5.15.0",
     "@testing-library/react": "12.1.2",
