@@ -1,4 +1,11 @@
-import { useMemo, useState, useEffect, forwardRef, useRef } from 'react'
+import {
+  useMemo,
+  useState,
+  useEffect,
+  forwardRef,
+  useRef,
+  ComponentProps,
+} from 'react'
 import { EditorState, EditorStateConfig, StateEffect } from '@codemirror/state'
 import { EditorView } from '@codemirror/view'
 import { useMergeRefs } from './merge-refs'
@@ -13,7 +20,7 @@ export type CodeMirrorProps = {
   onEditorViewChange?: (editorView: EditorView) => void
   onEditorStateChange?: (editorState: EditorState) => void
   extensions?: Extension[]
-  elementProps?: React.ComponentProps<'div'>
+  elementProps?: ComponentProps<'div'>
 }
 
 const CodeMirror = forwardRef<HTMLDivElement, CodeMirrorProps>(
