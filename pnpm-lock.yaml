@@ -17,7 +17,7 @@ specifiers:
   react-dom: 17.0.2
   rimraf: 3.0.2
   semantic-release: 18.0.0
-  tsup: 5.7.3
+  tsup: 5.7.4
   typescript: 4.5.2
 
 devDependencies:
@@ -37,7 +37,7 @@ devDependencies:
   react-dom: 17.0.2_react@17.0.2
   rimraf: 3.0.2
   semantic-release: 18.0.0
-  tsup: 5.7.3_typescript@4.5.2
+  tsup: 5.7.4_typescript@4.5.2
   typescript: 4.5.2
 
 packages:
@@ -4793,8 +4793,8 @@ packages:
     resolution: {integrity: sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==}
     dev: true
 
-  /tsup/5.7.3_typescript@4.5.2:
-    resolution: {integrity: sha512-vdcxyJ/yEOp0CM2GH1toh6n6Tc0QAShHar2FwOMszJgsRWwc9BnI92XwMB52Fz9Y/W5JRFFgtVs+gR+VTOFLtA==}
+  /tsup/5.7.4_typescript@4.5.2:
+    resolution: {integrity: sha512-vASi5l+P3ZvQRKmtIH5PrR8165/dOYyuynBwllPGMSAL2hd1TnEjwrOexguCr87uQ+UpXlhhdVvygaYdVyQc7w==}
     hasBin: true
     peerDependencies:
       typescript: ^4.2.3
