@@ -13,7 +13,7 @@
     "@codemirror/state": "^0.19.6",
     "@codemirror/theme-one-dark": "^0.19.1",
     "@codemirror/view": "^0.19.21",
-    "@eslint/eslintrc": "^1.0.4",
+    "@eslint/eslintrc": "^0.4.3",
     "eslint4b": "^7.32.0",
     "next": "^12.0.4",
     "react": "^17.0.2",
