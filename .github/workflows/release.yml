@@ -23,11 +23,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Check formatting
-        run: pnpm format:check
-
-      - name: Type check
-        run: pnpm type-check
+      - name: Lint
+        run: pnpm lint
 
       - name: Test
         run: pnpm test

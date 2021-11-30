@@ -1,35 +1,32 @@
 {
   "name": "rodemirror",
   "version": "0.0.0-development",
-  "description": "React component for CodeMirror 6",
   "type": "module",
-  "main": "dist/index.cjs",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    "import": "./dist/index.js",
-    "require": "./dist/index.cjs"
-  },
-  "files": [
-    "dist",
-    "package.json"
-  ],
-  "sideEffects": false,
-  "scripts": {
-    "clean": "rimraf dist",
-    "build": "pnpm clean && tsup src/index.tsx --format esm,cjs --dts --inject ./react-import.js",
-    "type-check": "tsc",
-    "test": "jest",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "semantic-release": "semantic-release",
-    "prepublishOnly": "pnpm build",
-    "prepare": "husky install"
-  },
+  "description": "React component for CodeMirror 6",
   "repository": {
     "type": "git",
     "url": "https://github.com/sachinraja/rodemirror.git"
   },
+  "homepage": "https://github.com/sachinraja/rodemirror#readme",
+  "bugs": {
+    "url": "https://github.com/sachinraja/rodemirror/issues"
+  },
+  "author": "Sachin Raja <sachinraja2349@gmail.com>",
+  "license": "MIT",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs"
+    }
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "package.json"
+  ],
   "keywords": [
     "react",
     "codemirror",
@@ -38,22 +35,28 @@
     "code",
     "editor"
   ],
-  "author": "Sachin Raja <sachinraja2349@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sachinraja/rodemirror/issues"
+  "scripts": {
+    "build": "pnpm clean && tsup",
+    "clean": "rimraf dist",
+    "format": "prettier -w .",
+    "lint": "run-p lint:*",
+    "lint:format": "prettier -c .",
+    "lint:types": "tsc",
+    "prepare": "husky install",
+    "prepublishOnly": "pnpm build",
+    "semantic-release": "semantic-release",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
-  "homepage": "https://github.com/sachinraja/rodemirror#readme",
   "peerDependencies": {
     "@codemirror/state": ">=0.18.0",
     "@codemirror/view": ">=0.18.0",
     "react": "^16 || ^17"
   },
   "devDependencies": {
-    "@codemirror/state": "0.19.6",
-    "@codemirror/view": "0.19.20",
-    "@swc/core": "1.2.111",
-    "@swc/jest": "0.2.5",
+    "@codemirror/state": "0.19.5",
+    "@codemirror/view": "0.19.19",
+    "@swc/core": "1.2.110",
+    "@swc/jest": "0.2.11",
     "@testing-library/jest-dom": "5.15.0",
     "@testing-library/react": "12.1.2",
     "@types/jest": "27.0.3",
@@ -61,13 +64,27 @@
     "husky": "7.0.4",
     "jest": "27.3.1",
     "lint-staged": "12.0.3",
+    "npm-run-all": "4.1.5",
     "prettier": "2.4.1",
+    "prettier-plugin-pkg": "0.11.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "regenerator-runtime": "0.13.9",
     "rimraf": "3.0.2",
     "semantic-release": "18.0.0",
     "tsup": "5.7.4",
     "typescript": "4.5.2"
+  },
+  "sideEffects": false,
+  "lint-staged": {
+    "*.{js,ts,tsx,md,json,yml}": "prettier --write"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "plugins": [
+      "./node_modules/prettier-plugin-pkg"
+    ]
   },
   "release": {
     "branches": [
@@ -80,11 +97,20 @@
       "@semantic-release/github"
     ]
   },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true
-  },
-  "lint-staged": {
-    "*.{js,ts,tsx,md,json,yml}": "prettier --write"
+  "tsup": {
+    "entryPoints": [
+      "src/index.tsx"
+    ],
+    "format": [
+      "esm",
+      "cjs"
+    ],
+    "dts": {
+      "resolve": true
+    },
+    "splitting": true,
+    "inject": [
+      "./react-import.js"
+    ]
   }
 }

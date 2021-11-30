@@ -1,5 +1,5 @@
 import { render, fireEvent } from '@testing-library/react'
-import CodeMirror from 'rodemirror'
+import CodeMirror from '../src'
 
 describe('component', () => {
   it('renders', async () => {

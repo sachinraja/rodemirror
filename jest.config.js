@@ -1,16 +1,9 @@
 export default {
   transformIgnorePatterns: ['node_modules', 'dist'],
   transform: {
-    '^.+\\.(j|t)sx?$': [
-      '@swc/jest',
-      {
-        module: { type: 'commonjs' },
-      },
-    ],
+    '^.+\\.(j|t)sx?$': ['@swc/jest'],
   },
-  moduleNameMapper: {
-    rodemirror: '<rootDir>/src/index.tsx',
-  },
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['@testing-library/jest-dom'],
 }

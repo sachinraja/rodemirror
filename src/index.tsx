@@ -6,12 +6,15 @@ import {
   useRef,
   ComponentProps,
 } from 'react'
-import { EditorState, EditorStateConfig, StateEffect } from '@codemirror/state'
-import { EditorView } from '@codemirror/view'
+import {
+  EditorState,
+  EditorStateConfig,
+  StateEffect,
+  Extension,
+} from '@codemirror/state'
+import { EditorView, ViewUpdate } from '@codemirror/view'
 import { useMergeRefs } from './merge-refs'
 import { useFirstRender } from './use-first-render'
-import type { Extension } from '@codemirror/state'
-import type { ViewUpdate } from '@codemirror/view'
 
 export type CodeMirrorProps = {
   value?: EditorStateConfig['doc']
@@ -57,9 +60,6 @@ const CodeMirror = forwardRef<HTMLDivElement, CodeMirrorProps>(
     const isFirstRender = useFirstRender()
 
     useEffect(() => {
-      const currentEditor = innerRef.current
-      if (!currentEditor) return
-
       const state = EditorState.create({
         doc: value,
         selection: selection,
@@ -69,7 +69,7 @@ const CodeMirror = forwardRef<HTMLDivElement, CodeMirrorProps>(
       if (onEditorStateChange) onEditorStateChange(state)
 
       const view = new EditorView({
-        parent: currentEditor,
+        parent: innerRef.current!,
         state,
       })
 
