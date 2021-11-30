@@ -84,12 +84,6 @@ const CodeMirror = forwardRef<HTMLDivElement, CodeMirrorProps>(
       // this is already handled on the first render
       if (isFirstRender || !editorView) return
 
-      // for some reason, I have to clear the extensions before setting them
-      // otherwise, I cannot remove extensions
-      editorView.dispatch({
-        effects: StateEffect.reconfigure.of([]),
-      })
-
       editorView.dispatch({
         effects: StateEffect.reconfigure.of(extensions),
       })
