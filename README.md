@@ -12,7 +12,7 @@ React component for [CodeMirror 6](https://codemirror.net/6/)
 
 ## Installation
 
-```bash
+```shell
 npm install rodemirror @codemirror/state @codemirror/view
 ```
 
@@ -41,12 +41,12 @@ The `useMemo` is so that the extensions are not recreated each time, which would
 Create an uncontrolled component for reading values.
 
 ```tsx
+import { useMemo, useState } from 'react'
 import CodeMirror from 'rodemirror'
+import { Extension } from '@codemirror/state'
 import { basicSetup } from '@codemirror/basic-setup'
 import { oneDark } from '@codemirror/theme-one-dark'
 import { javascript } from '@codemirror/lang-javascript'
-import { useMemo, useState } from 'react'
-import type { Extension } from '@codemirror/state'
 
 const Editor = () => {
   const extensions = useMemo<Extension[]>(
@@ -77,12 +77,12 @@ const Editor = () => {
 A truly controlled value is not recommended as you will be overwriting the entire document on each input and the editor will become very slow. This also does not work with features such as autocomplete. If you must pass in a controlled value, you can separate the reading and writing values and only update when necessary:
 
 ```tsx
+import { useMemo, useState, useEffect } from 'react'
 import CodeMirror from 'rodemirror'
+import { Extension } from '@codemirror/state'
 import { basicSetup } from '@codemirror/basic-setup'
 import { oneDark } from '@codemirror/theme-one-dark'
 import { javascript } from '@codemirror/lang-javascript'
-import { useMemo, useState, useEffect } from 'react'
-import type { Extension } from '@codemirror/state'
 
 const Editor = ({ shouldAddLogOnChange }) => {
   const Editor = ({
@@ -123,7 +123,7 @@ const Editor = ({ shouldAddLogOnChange }) => {
 Unless you are performing complex actions, you likely do not need this. You can use callbacks to keep `EditorView` and `EditorState`. You can keep the `EditorView` in a `useState` like so:
 
 ```tsx
-import type { EditorView } from '@codemirror/view'
+import { EditorView } from '@codemirror/view'
 
 const Editor = () => {
   const extensions = useMemo(() => [basicSetup, oneDark, javascript()], [])
