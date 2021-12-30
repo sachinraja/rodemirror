@@ -14,7 +14,6 @@ specifiers:
   npm-run-all: 4.1.5
   react: 17.0.2
   react-dom: 17.0.2
-  rimraf: 3.0.2
   semantic-release: 18.0.1
   tsup: 5.11.9
   typescript: 4.5.4
@@ -35,7 +34,6 @@ devDependencies:
   npm-run-all: 4.1.5
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
-  rimraf: 3.0.2
   semantic-release: 18.0.1
   tsup: 5.11.9_typescript@4.5.4
   typescript: 4.5.4
