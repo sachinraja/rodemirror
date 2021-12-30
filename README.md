@@ -21,11 +21,11 @@ npm install rodemirror @codemirror/state @codemirror/view
 Use the `CodeMirror` component:
 
 ```tsx
-import CodeMirror from 'rodemirror'
 import { basicSetup } from '@codemirror/basic-setup'
-import { oneDark } from '@codemirror/theme-one-dark'
 import { javascript } from '@codemirror/lang-javascript'
+import { oneDark } from '@codemirror/theme-one-dark'
 import { useMemo } from 'react'
+import CodeMirror from 'rodemirror'
 
 const Editor = () => {
   const extensions = useMemo(() => [basicSetup, oneDark, javascript()], [])
@@ -41,17 +41,17 @@ The `useMemo` is so that the extensions are not recreated each time, which would
 Create an uncontrolled component for reading values.
 
 ```tsx
+import { basicSetup } from '@codemirror/basic-setup'
+import { javascript } from '@codemirror/lang-javascript'
+import { Extension } from '@codemirror/state'
+import { oneDark } from '@codemirror/theme-one-dark'
 import { useMemo, useState } from 'react'
 import CodeMirror from 'rodemirror'
-import { Extension } from '@codemirror/state'
-import { basicSetup } from '@codemirror/basic-setup'
-import { oneDark } from '@codemirror/theme-one-dark'
-import { javascript } from '@codemirror/lang-javascript'
 
 const Editor = () => {
   const extensions = useMemo<Extension[]>(
     () => [basicSetup, oneDark, javascript()],
-    []
+    [],
   )
 
   const defaultValue = "console.log('Hello world!')"

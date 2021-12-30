@@ -14,13 +14,13 @@ function setRefs<T>(ref: React.Ref<T>, value: T) {
 
 export function useMergeRefs<ForwardRef, LocalRef extends ForwardRef>(
   forwardedRef: React.Ref<ForwardRef>,
-  localRef: React.Ref<LocalRef>
+  localRef: React.Ref<LocalRef>,
 ): (instance: LocalRef | null) => void {
   return React.useCallback(
     (value) => {
       setRefs(forwardedRef, value)
       setRefs(localRef, value)
     },
-    [forwardedRef, localRef]
+    [forwardedRef, localRef],
   )
 }

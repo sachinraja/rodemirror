@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import { render, fireEvent, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import CodeMirror from '../src'
 
 const defaultValue = 'hello'

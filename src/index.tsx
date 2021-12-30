@@ -1,18 +1,6 @@
-import {
-  useMemo,
-  useState,
-  useEffect,
-  forwardRef,
-  useRef,
-  ComponentProps,
-} from 'react'
-import {
-  EditorState,
-  EditorStateConfig,
-  StateEffect,
-  Extension,
-} from '@codemirror/state'
+import { EditorState, EditorStateConfig, Extension, StateEffect } from '@codemirror/state'
 import { EditorView, ViewUpdate } from '@codemirror/view'
+import { ComponentProps, forwardRef, useEffect, useMemo, useRef, useState } from 'react'
 import { useMergeRefs } from './merge-refs'
 import { useFirstRender } from './use-first-render'
 
@@ -37,7 +25,7 @@ const CodeMirror = forwardRef<HTMLDivElement, CodeMirrorProps>(
       extensions: passedExtensions = [],
       elementProps,
     },
-    ref
+    ref,
   ) => {
     const innerRef = useRef<HTMLDivElement>(null)
     const mergedRef = useMergeRefs(ref, innerRef)
@@ -46,7 +34,7 @@ const CodeMirror = forwardRef<HTMLDivElement, CodeMirrorProps>(
 
     const updateExtension = useMemo<Extension | undefined>(
       () => (onUpdate ? EditorView.updateListener.of(onUpdate) : undefined),
-      []
+      [],
     )
 
     const extensions = useMemo<Extension>(
@@ -54,7 +42,7 @@ const CodeMirror = forwardRef<HTMLDivElement, CodeMirrorProps>(
         updateExtension
           ? [updateExtension, ...passedExtensions]
           : passedExtensions,
-      [updateExtension, passedExtensions]
+      [updateExtension, passedExtensions],
     )
 
     const isFirstRender = useFirstRender()
@@ -117,7 +105,7 @@ const CodeMirror = forwardRef<HTMLDivElement, CodeMirrorProps>(
     }, [value, editorView])
 
     return <div ref={mergedRef} {...elementProps} />
-  }
+  },
 )
 
 CodeMirror.displayName = 'CodeMirror'

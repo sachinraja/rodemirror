@@ -1,9 +1,9 @@
-import { useEffect, useMemo, useState } from 'react'
 import { basicSetup } from '@codemirror/basic-setup'
-import { oneDark } from '@codemirror/theme-one-dark'
 import { javascript } from '@codemirror/lang-javascript'
-import CodeMirror from 'rodemirror'
 import type { Extension } from '@codemirror/state'
+import { oneDark } from '@codemirror/theme-one-dark'
+import { useEffect, useMemo, useState } from 'react'
+import CodeMirror from 'rodemirror'
 
 const Editor = ({
   shouldAddLogOnChange,
@@ -12,7 +12,7 @@ const Editor = ({
 }) => {
   const extensions = useMemo<Extension[]>(
     () => [basicSetup, oneDark, javascript()],
-    []
+    [],
   )
 
   const defaultValue = "console.log('Hello world!')"
@@ -44,7 +44,7 @@ export default function Home() {
     // change every 2 seconds
     const interval = setInterval(
       () => setShouldAddLogOnChange(!shouldAddLogOnChange),
-      2000
+      2000,
     )
 
     return () => clearInterval(interval)

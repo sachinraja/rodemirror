@@ -38,9 +38,9 @@
   "scripts": {
     "build": "pnpm clean && tsup",
     "clean": "rimraf dist",
-    "format": "prettier -w .",
+    "format": "dprint fmt",
     "lint": "run-p lint:*",
-    "lint:format": "prettier -c .",
+    "lint:format": "dprint check",
     "lint:types": "tsc",
     "prepare": "husky install",
     "prepublishOnly": "pnpm build",
@@ -59,12 +59,11 @@
     "@testing-library/react": "12.1.2",
     "@types/react": "17.0.38",
     "@vitejs/plugin-react": "1.1.3",
+    "dprint": "0.19.2",
     "husky": "7.0.4",
     "jsdom": "19.0.0",
     "lint-staged": "12.1.4",
     "npm-run-all": "4.1.5",
-    "prettier": "2.5.1",
-    "prettier-plugin-pkg": "0.11.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "rimraf": "3.0.2",
@@ -76,14 +75,7 @@
   },
   "sideEffects": false,
   "lint-staged": {
-    "*.{js,ts,tsx,md,json,yml}": "prettier --write"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "plugins": [
-      "./node_modules/prettier-plugin-pkg"
-    ]
+    "*.{js,ts,tsx,md,json,yml}": "dprint fmt"
   },
   "release": {
     "branches": [

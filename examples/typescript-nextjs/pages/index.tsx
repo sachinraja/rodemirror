@@ -1,10 +1,10 @@
-import { useMemo, useState } from 'react'
 import { basicSetup } from '@codemirror/basic-setup'
-import { oneDark } from '@codemirror/theme-one-dark'
 import { javascript } from '@codemirror/lang-javascript'
-import CodeMirror from 'rodemirror'
 import type { Extension } from '@codemirror/state'
+import { oneDark } from '@codemirror/theme-one-dark'
 import type { EditorView } from '@codemirror/view'
+import { useMemo, useState } from 'react'
+import CodeMirror from 'rodemirror'
 
 export default function Home() {
   const baseExtensions: Extension[] = [basicSetup, oneDark]
@@ -15,7 +15,7 @@ export default function Home() {
     () => ({
       anchor: 7,
     }),
-    []
+    [],
   )
 
   const defaultValue = "console.log('Hello world!')"
@@ -39,7 +39,7 @@ export default function Home() {
 
       <div style={{ marginTop: 5 }}>
         <button
-          type="button"
+          type='button'
           onClick={() => {
             if (!editorView) return
 
@@ -61,13 +61,13 @@ export default function Home() {
         </button>
 
         <button
-          type="button"
+          type='button'
           onClick={() => setExtensions([...baseExtensions, javascript()])}
         >
           Click me to add the JavaScript extension
         </button>
 
-        <button type="button" onClick={() => setExtensions(baseExtensions)}>
+        <button type='button' onClick={() => setExtensions(baseExtensions)}>
           Click me to remove the JavaScript extension
         </button>
       </div>
