@@ -49,7 +49,7 @@
   "peerDependencies": {
     "@codemirror/state": ">=0.18.0",
     "@codemirror/view": ">=0.18.0",
-    "react": "^16 || ^17"
+    "react": "^16 || ^17 || ^18"
   },
   "devDependencies": {
     "@codemirror/state": "0.19.9",
