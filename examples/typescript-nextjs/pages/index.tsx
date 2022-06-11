@@ -1,10 +1,10 @@
-import { basicSetup } from '@codemirror/basic-setup'
 import { javascript } from '@codemirror/lang-javascript'
 import type { Extension } from '@codemirror/state'
 import { oneDark } from '@codemirror/theme-one-dark'
 import type { EditorView } from '@codemirror/view'
-import { useMemo, useState } from 'react'
-import CodeMirror from 'rodemirror'
+import { basicSetup } from 'codemirror'
+import { useCallback, useMemo, useState } from 'react'
+import CodeMirror, { CodeMirrorProps } from 'rodemirror'
 
 export default function Home() {
   const baseExtensions: Extension[] = [basicSetup, oneDark]

@@ -1,7 +1,7 @@
-import { basicSetup } from '@codemirror/basic-setup'
 import { javascript } from '@codemirror/lang-javascript'
 import type { Extension } from '@codemirror/state'
 import { oneDark } from '@codemirror/theme-one-dark'
+import { basicSetup } from 'codemirror'
 import { useEffect, useMemo, useState } from 'react'
 import CodeMirror from 'rodemirror'
 
