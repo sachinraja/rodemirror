@@ -87,7 +87,7 @@
     ]
   },
   "tsup": {
-    "entryPoints": [
+    "entry": [
       "src/index.tsx"
     ],
     "format": [
