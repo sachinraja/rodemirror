@@ -19,7 +19,7 @@ npm install rodemirror @codemirror/state @codemirror/view
 Use the `CodeMirror` component:
 
 ```tsx
-import { basicSetup } from '@codemirror/basic-setup'
+import { basicSetup } from 'codemirror'
 import { javascript } from '@codemirror/lang-javascript'
 import { oneDark } from '@codemirror/theme-one-dark'
 import { useMemo } from 'react'
@@ -39,7 +39,7 @@ The `useMemo` is so that the extensions are not recreated each time, which would
 Create an uncontrolled component for reading values.
 
 ```tsx
-import { basicSetup } from '@codemirror/basic-setup'
+import { basicSetup } from 'codemirror'
 import { javascript } from '@codemirror/lang-javascript'
 import { Extension } from '@codemirror/state'
 import { oneDark } from '@codemirror/theme-one-dark'
@@ -77,8 +77,8 @@ A truly controlled value is not recommended as you will be overwriting the entir
 ```tsx
 import { useMemo, useState, useEffect } from 'react'
 import CodeMirror from 'rodemirror'
-import { Extension } from '@codemirror/state'
-import { basicSetup } from '@codemirror/basic-setup'
+import type { Extension } from '@codemirror/state'
+import { basicSetup } from 'codemirror'
 import { oneDark } from '@codemirror/theme-one-dark'
 import { javascript } from '@codemirror/lang-javascript'
 
